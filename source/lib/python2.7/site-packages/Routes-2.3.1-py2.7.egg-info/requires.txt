@@ -1,0 +1,5 @@
+six
+repoze.lru>=0.3
+
+[middleware]
+webob

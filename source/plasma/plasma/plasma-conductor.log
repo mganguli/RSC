@@ -1,0 +1,3934 @@
+2016-07-13 12:23:36.019 34460 INFO plasma.conductor.config [-] Logging enabled!
+2016-07-13 12:23:36.019 34460 INFO __main__ [-] Starting plasma-conductor in PID 34460
+2016-07-13 12:23:36.062 34460 INFO oslo_messaging.server [-] blocking executor handles only one message at once. threading or eventlet executor is recommended.
+2016-07-13 12:23:36.067 34460 WARNING oslo_config.cfg [-] Option "rabbit_host" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:36.067 34460 WARNING oslo_config.cfg [-] Option "rabbit_port" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:36.068 34460 WARNING oslo_config.cfg [-] Option "rabbit_password" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:36.068 34460 WARNING oslo_config.cfg [-] Option "rabbit_userid" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:36.083 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/index.json
+2016-07-13 12:23:36.090 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Systems",
+  "@odata.id": "/redfish/v1/Systems",
+  "@odata.type": "#ComputerSystemCollection.ComputerSystemCollection",
+  "Name": "Computer System Collection",
+  "Members@odata.count": 24,
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled3-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled4-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled1-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled2-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled3-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled4-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled5-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled6-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled7-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled8-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block3-Sled1-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block3-Sled2-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block3-Sled3-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block3-Sled4-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled1-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled2-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled3-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled4-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled5-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled6-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled7-Node1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled8-Node1"
+    }
+  ]
+}
+
+
+2016-07-13 12:23:36.091 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/index.json
+2016-07-13 12:23:36.098 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis",
+  "@odata.id": "/redfish/v1/Chassis",
+  "@odata.type": "#ChassisCollection.ChassisCollection",
+  "Name": "Chassis Collection",
+  "Members@odata.count": 32,
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Switch1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled4"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled4"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled5"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled6"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled7"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled8"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled4"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled4"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled5"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled6"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled7"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled8"
+    }
+  ]
+}
+
+
+2016-07-13 12:23:36.099 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1/index.json
+2016-07-13 12:23:36.112 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1",
+  "Name": "G5_Rack",
+  "ChassisType": "Rack",
+  "Description": "G5 Rack-Level Enclosure for this Management Domain",
+  "Manufacturer": "Dell",
+  "Model": "G5",
+  "SerialNumber": "RAS_Rack_SerialNumber",
+  "AssetTag": "RSA_Rack_AssetTag",
+  "PowerState": "ON",
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown"
+      ]
+    }
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "Contains": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Switch1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.113 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Switch1/index.json
+2016-07-13 12:23:36.119 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Switch1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Switch1",
+  "Name": "Dell Networking S4048-ON Switch",
+  "ChassisType": "Enclosure",
+  "Description": "Ethernet Switch Chassis For RSA Rack",
+  "Manufacturer": "Dell",
+  "Model": "S4048-ON",
+  "SerialNumber": null,
+  "AssetTag": null,
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Switch1/Thermal"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Switch1",
+        "ParentId": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Switch1"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Switch1"
+      }
+    ]
+  }
+}
+
+2016-07-13 12:23:36.120 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block1/index.json
+2016-07-13 12:23:36.126 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block1",
+  "Name": "G5 Block",
+  "ChassisType": "Enclosure",
+  "Description": "G5 Block Chassis",
+  "Manufacturer": "Dell",
+  "Model": "G5 Block",
+  "SerialNumber": null,
+  "AssetTag": null,
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1/Power"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Block1",
+        "ParentId": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "Contains": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled3"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled4"
+      }
+    ],
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ],
+    "ManagersInChassis": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.127 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2/index.json
+2016-07-13 12:23:36.133 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2",
+  "Name": "G5 Block",
+  "ChassisType": "Enclosure",
+  "Description": "G5 Block Chassis",
+  "Manufacturer": "Dell",
+  "Model": "G5 Block",
+  "SerialNumber": null,
+  "AssetTag": null,
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2/Power"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Block2",
+        "ParentId": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "Contains": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled2"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled3"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled4"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled5"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled6"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled7"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled8"
+      }
+    ],
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ManagersInChassis": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ]
+  }
+}
+
+2016-07-13 12:23:36.134 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block3/index.json
+2016-07-13 12:23:36.140 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block3",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block3",
+  "Name": "G5 Block",
+  "ChassisType": "Enclosure",
+  "Description": "G5 Block Chassis",
+  "Manufacturer": "Dell",
+  "Model": "G5 Block",
+  "SerialNumber": null,
+  "AssetTag": null,
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3/Power"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Block3",
+        "ParentId": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "Contains": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled2"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled3"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled4"
+      }
+    ],
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block3-Bc"
+      }
+    ],
+    "ManagersInChassis": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block3-Bc"
+      }
+    ]
+  }
+}
+
+2016-07-13 12:23:36.141 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4/index.json
+2016-07-13 12:23:36.147 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4",
+  "Name": "G5 Block",
+  "ChassisType": "Enclosure",
+  "Description": "G5 Block Chassis",
+  "Manufacturer": "Dell",
+  "Model": "G5 Block",
+  "SerialNumber": null,
+  "AssetTag": null,
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4/Power"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Block4",
+        "ParentId": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "Contains": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled2"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled3"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled4"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled5"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled6"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled7"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled8"
+      }
+    ],
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ManagersInChassis": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.149 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-PowerBay1/index.json
+2016-07-13 12:23:36.155 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-PowerBay1",
+  "Name": "G5_PowerBay",
+  "ChassisType": "Enclosure",
+  "Description": "G5 PowerBay Chassis",
+  "Manufacturer": "Dell",
+  "Model": "G5 PowerBay",
+  "SerialNumber": "RAS_Rack_SerialNumber",
+  "AssetTag": "12345",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1/Power"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "PowerBay1",
+        "ParentId": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      }
+    ],
+    "ManagersInChassis": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-Im"
+      }
+    ]
+  }
+}
+
+2016-07-13 12:23:36.156 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-PowerBay2/index.json
+2016-07-13 12:23:36.163 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-PowerBay2",
+  "Name": "G5_PowerBay",
+  "ChassisType": "Enclosure",
+  "Description": "G5 PowerBay Chassis",
+  "Manufacturer": "Dell",
+  "Model": "G5 PowerBay",
+  "SerialNumber": "RSA_Rack_SerialNumber",
+  "AssetTag": "12345",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2/Power"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "PowerBay2",
+        "ParentId": "Rack1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay2-MC1"
+      }
+    ],
+    "ManagersInChassis": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay2-MC1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.164 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block1-Sled1/index.json
+2016-07-13 12:23:36.169 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block1-Sled1",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Unknown",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled1/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled1/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block1-Sled1/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block1-Sled1/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled1",
+        "ParentId": "Block1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ],
+    "ComputerSystems": [
+	  {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.170 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block1-Sled2/index.json
+2016-07-13 12:23:36.175 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block1-Sled2",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block1-Sled2/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block1-Sled2/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled2",
+        "ParentId": "Block1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.176 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block1-Sled3/index.json
+2016-07-13 12:23:36.181 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled3",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block1-Sled3",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Unknown",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled3/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled3/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block1-Sled3/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block1-Sled3/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled3",
+        "ParentId": "Block1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ],
+    "ComputerSystems": [
+	  {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled3-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.183 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block1-Sled4/index.json
+2016-07-13 12:23:36.188 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled4",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block1-Sled4",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled4/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled4/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block1-Sled4/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block1-Sled4/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled4",
+        "ParentId": "Block1"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled4-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.189 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled1/index.json
+2016-07-13 12:23:36.195 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled1",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled1/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled1/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled1/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled1/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled1",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled1-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.196 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled2/index.json
+2016-07-13 12:23:36.201 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled2",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled2",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled2/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled2/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled2/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled2/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled2",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled2-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.202 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled3/index.json
+2016-07-13 12:23:36.207 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled3",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled3",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled3/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled3/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled3/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled3/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled3",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled3-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.208 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled4/index.json
+2016-07-13 12:23:36.213 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled4",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled4",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled4/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled4/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled4/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled4/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled4",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled4-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.215 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled5/index.json
+2016-07-13 12:23:36.220 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled5",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled5",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled5/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled5/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled5/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled5/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled5",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled5-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.221 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled6/index.json
+2016-07-13 12:23:36.227 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled6",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled6",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled6/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled6/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled6/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled6/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled6",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled6-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.228 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled7/index.json
+2016-07-13 12:23:36.233 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled7",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled7",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled7/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled7/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled7/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled7/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled7",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled7-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.234 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block2-Sled8/index.json
+2016-07-13 12:23:36.238 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled8",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block2-Sled8",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled8/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block2-Sled8/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block2-Sled8/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block2-Sled8/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled8",
+        "ParentId": "Block2"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block2-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block2-Sled8-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.239 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block3-Sled1/index.json
+2016-07-13 12:23:36.244 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block3-Sled1",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Unknown",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled1/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled1/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block3-Sled1/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block3-Sled1/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled1",
+        "ParentId": "Block3"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block3-Bc"
+      }
+    ],
+    "ComputerSystems": [
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.245 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block3-Sled2/index.json
+2016-07-13 12:23:36.249 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled2",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block3-Sled2",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled2/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled2/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block3-Sled2/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block3-Sled2/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled2",
+        "ParentId": "Block3"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block3-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block3-Sled2-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.251 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block3-Sled3/index.json
+2016-07-13 12:23:36.255 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled3",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block3-Sled3",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Unknown",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled3/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled3/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block3-Sled3/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block3-Sled3/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled3",
+        "ParentId": "Block3"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block3-Bc"
+      }
+    ],
+    "ComputerSystems": [
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.256 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block3-Sled4/index.json
+2016-07-13 12:23:36.261 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled4",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block3-Sled4",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled4/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block3-Sled4/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block3-Sled4/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block3-Sled4/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled4",
+        "ParentId": "Block3"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block3"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block3-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block3-Sled4-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.262 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled1/index.json
+2016-07-13 12:23:36.266 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled1",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled1",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled1/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled1/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled1/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled1/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled1",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled1-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.268 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled2/index.json
+2016-07-13 12:23:36.272 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled2",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled2",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled2/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled2/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled2/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled2/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled2",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled2-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.273 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled3/index.json
+2016-07-13 12:23:36.277 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled3",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled3",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled3/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled3/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled3/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled3/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled3",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled3-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.279 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled4/index.json
+2016-07-13 12:23:36.284 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled4",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled4",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled4/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled4/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled4/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled4/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled4",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled4-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.285 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled5/index.json
+2016-07-13 12:23:36.289 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled5",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled5",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled5/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled5/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled5/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled5/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled5",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled5-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.290 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled6/index.json
+2016-07-13 12:23:36.295 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled6",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled6",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled6/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled6/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled6/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled6/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled6",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled6-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.296 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled7/index.json
+2016-07-13 12:23:36.300 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled7",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled7",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled7/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled7/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled7/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled7/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled7",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled7-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.302 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Chassis/Rack1-Block4-Sled8/index.json
+2016-07-13 12:23:36.306 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled8",
+  "@odata.type": "#Chassis.1.0.1.Chassis",
+  "Id": "Rack1-Block4-Sled8",
+  "Name": "G5 Sled",
+  "ChassisType": "Sled",
+  "Description": "G5 Sled",
+  "Manufacturer": "Dell",
+  "Model": "G5 Sled",
+  "IndicatorLED": "Off",
+  "PowerState": "ON",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled8/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/Rack1-Block4-Sled8/Power"
+  },
+  "Actions": {
+    "#Chassis.Reset": {
+      "target": "/redfish/v1/Chassis/Rack1-Block4-Sled8/Actions/Chassis.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    },
+    "Oem": {
+      "#Dell.G5SledReseat": {
+        "target": "/redfish/v1/Chassis/Rack1-Block4-Sled8/Actions/Chassis.Reseat"
+      }
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": null,
+      "BmcIp": null,
+      "BmcMac": null
+    },
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/schema#RSA.Chassis",
+      "Location": {
+        "Id": "Sled8",
+        "ParentId": "Block4"
+      }
+    }
+  },
+  "Links": {
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+    },
+    "PoweredBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-PowerBay2"
+      }
+    ],
+    "CooledBy": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block4"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block4-Bc"
+      }
+    ],
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block4-Sled8-Node1"
+      }
+    ]
+  }
+}
+
+
+2016-07-13 12:23:36.307 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/index.json
+2016-07-13 12:23:36.311 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#ProcessorsCollection.ProcessorsCollection",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors",
+    "@odata.type": "#Processors.1.0.0.ProcessorsCollection",
+    "Name": "Processors Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/2"
+        }
+    ]
+}
+
+2016-07-13 12:23:36.312 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] Processing CPU /redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/1
+2016-07-13 12:23:36.313 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/1/index.json
+2016-07-13 12:23:36.317 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Processor.Processor",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/1",
+  "@odata.type": "#Processor.1.0.0.Processor",
+  "Name": "Processor",
+  "Id": "1",
+  "Socket": "CPU_1",
+  "ProcessorType": "CPU",
+  "ProcessorArchitecture": "x86",
+  "InstructionSet": "x86-64",
+  "Manufacturer": "Intel(R) Corporation",
+  "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+  "ProcessorID": {
+    "VendorID": "GenuineIntel",
+    "IdentificationRegisters": "0x34AC34DC8901274A",
+    "EffectiveFamily": "0x42",
+    "EffectiveModel": "0x61",
+    "Step": "0x1",
+    "MicrocodeInfo": "0x429943"
+  },
+  "MaxSpeedMHz": 3700,
+  "TotalCores": 8,
+  "TotalThreads": 16,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/Schema#RSA.Processor",
+      "Brand": "E5"
+    }
+  }
+}
+
+2016-07-13 12:23:36.318 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] Processing CPU /redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/2
+2016-07-13 12:23:36.318 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/2/index.json
+2016-07-13 12:23:36.323 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Processor.Processor",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors/2",
+  "@odata.type": "#Processor.1.0.0.Processor",
+  "Name": "Processor",
+  "Id": "2",
+  "Socket": "CPU_2",
+  "ProcessorType": "CPU",
+  "ProcessorArchitecture": "x86",
+  "InstructionSet": "x86-64",
+  "Manufacturer": "Intel(R) Corporation",
+  "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+  "ProcessorID": {
+    "VendorID": "GenuineIntel",
+    "IdentificationRegisters": "0x34AC34DC8901274A",
+    "EffectiveFamily": "0x42",
+    "EffectiveModel": "0x61",
+    "Step": "0x1",
+    "MicrocodeInfo": "0x429943"
+  },
+  "MaxSpeedMHz": 3700,
+  "TotalCores": 8,
+  "TotalThreads": 16,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/Schema#RSA.Processor",
+      "Brand": "E5"
+    }
+  }
+}
+
+2016-07-13 12:23:36.324 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/index.json
+2016-07-13 12:23:36.328 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Systems/Members/$entity",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1",
+  "@odata.type": "#ComputerSystem.1.0.1.ComputerSystem",
+  "Id": "Rack1-Block1-Sled1-Node1",
+  "Name": "G5 Computer System",
+  "SystemType": "Physical",
+  "AssetTag": "?DISABLE",
+  "Manufacturer": "Dell",
+  "Model": "METALLICA",
+  "SerialNumber": null,
+  "Description": "G5 Computer System Node",
+  "UUID": "100829ce",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Boot": {
+    "BootSourceOverrideEnabled": "DISABLED",
+    "BootSourceOverrideTarget": "NONE",
+    "BootSourceOverrideTarget@Redfish.AllowableValues": [
+      "None",
+      "Pxe",
+      "Hdd",
+      "BiosSetup",
+      "Cd",
+      "Floppy"
+    ]
+  },
+  "BiosVersion": "1.1.3",
+    "HostName": "rsaHost-Rack1-Block1-Sled1-Node1",
+    "ProcessorSummary": {
+        "Count": 2,
+        "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "MemorySummary": {
+        "TotalSystemMemoryGiB": 64,
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "Processors": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Processors"
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/EthernetInterfaces"
+    },
+    "SimpleStorage": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage"
+    },
+  "Links": {
+    "Chassis": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled1"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ]
+  },
+  "Actions": {
+    "#ComputerSystem.Reset": {
+      "target": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/Actions/ComputerSystem.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": "02.05.05.05x1f",
+      "BmcIp": "192.168.0.120",
+      "BmcMac": "00:8C:FA:EA:31:6A"
+    },
+    "Intel_RSA": {
+      "DiscoveryState": "Basic",
+      "ProcessorSockets": 2,
+      "MemorySockets": 16
+    }
+  }
+}
+
+2016-07-13 12:23:36.329 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/EthernetInterfaces/index.json
+2016-07-13 12:23:36.334 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/EthernetInterfaces",
+    "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "Name": "Ethernet Interface Collection",
+    "Description": "Network Port Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/EthernetInterfaces/1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/EthernetInterfaces/2"
+        }
+    ],
+    "Oem": {}
+}
+
+2016-07-13 12:23:36.334 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage/index.json
+2016-07-13 12:23:36.339 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#SimpleStorageCollection.SimpleStorageCollection",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage",
+    "@odata.type": "#SimpleStorageCollection.SimpleStorageCollection",
+    "Name": "Simple Storage Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage/pch"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage/perc"
+        }
+    ]
+}
+
+2016-07-13 12:23:36.339 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage/pch/index.json
+2016-07-13 12:23:36.344 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#SimpleStorage.SimpleStorage",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage/pch",
+    "@odata.type": "#SimpleStorage.1.1.0.SimpleStorage",
+    "Id": "pch",
+    "Description": "PCH Simple Storage Controller",
+    "Name": "System_SATA",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Devices": [
+        {
+            "Name": "Drive_1",
+            "Manufacturer": "Seagate",
+            "Model": "ST2000NM0024",
+            "CapacityBytes": 1931231343200,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_2",
+            "Manufacturer": "Seagate",
+            "Model": "ST2000NM0024",
+            "CapacityBytes": 1931231343200,
+            "Status": {
+                "State": "Enabled",
+                "Health": "Degraded"
+            }
+        },
+        {
+            "Name": "Drive_3",
+            "Status": {
+                "State": "Absent"
+            }
+        },
+        {
+            "Name": "Drive_4",
+            "Status": {
+                "State": "Absent"
+            }
+        },
+        {
+            "Name": "Drive_5",
+            "Status": {
+                "State": "Absent"
+            }
+        },
+        {
+            "Name": "Drive_6",
+            "Status": {
+                "State": "Absent"
+            }
+        }
+    ]
+}
+
+2016-07-13 12:23:36.345 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage/perc/index.json
+2016-07-13 12:23:36.351 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#SimpleStorage.SimpleStorage",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled1-Node1/SimpleStorage/perc",
+    "@odata.type": "#SimpleStorage.1.1.0.SimpleStorage",
+    "Id": "perc",
+    "Name": "PERC",
+    "Description": "PowerEdge RAID Card (PERC) Simple Storage Controller",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Devices": [
+        {
+            "Name": "Drive_1",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_2",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_3",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_4",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_5",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_6",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_7",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_8",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_9",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_10",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_11",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "Degraded"
+            }
+        },
+        {
+            "Name": "Drive_12",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        }
+    ]
+}
+
+2016-07-13 12:23:36.352 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {'ram': '64', 'storage': '70076', 'nodeid': u'Rack1-Block1-Sled1-Node1', 'location': u'Systems:Rack1-Block1-Sled1-Node1_Sled:Rack1-Block1-Sled1_Enclosure:Rack1-Block1_Rack:Rack1_', 'cpu': {'count': '16', 'model': u'Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz', 'arch': u'x86-64'}, 'nw': '2'}
+2016-07-13 12:23:36.353 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/index.json
+2016-07-13 12:23:36.358 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#ProcessorsCollection.ProcessorsCollection",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors",
+    "@odata.type": "#Processors.1.0.0.ProcessorsCollection",
+    "Name": "Processors Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/2"
+        }
+    ]
+}
+
+2016-07-13 12:23:36.358 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] Processing CPU /redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/1
+2016-07-13 12:23:36.359 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/1/index.json
+2016-07-13 12:23:36.363 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Processor.Processor",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/1",
+  "@odata.type": "#Processor.1.0.0.Processor",
+  "Name": "Processor",
+  "Id": "1",
+  "Socket": "CPU_1",
+  "ProcessorType": "CPU",
+  "ProcessorArchitecture": "x86",
+  "InstructionSet": "x86-64",
+  "Manufacturer": "Intel(R) Corporation",
+  "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+  "ProcessorID": {
+    "VendorID": "GenuineIntel",
+    "IdentificationRegisters": "0x34AC34DC8901274A",
+    "EffectiveFamily": "0x42",
+    "EffectiveModel": "0x61",
+    "Step": "0x1",
+    "MicrocodeInfo": "0x429943"
+  },
+  "MaxSpeedMHz": 3700,
+  "TotalCores": 8,
+  "TotalThreads": 16,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/Schema#RSA.Processor",
+      "Brand": "E5"
+    }
+  }
+}
+
+2016-07-13 12:23:36.364 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] Processing CPU /redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/2
+2016-07-13 12:23:36.365 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/2/index.json
+2016-07-13 12:23:36.370 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Processor.Processor",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors/2",
+  "@odata.type": "#Processor.1.0.0.Processor",
+  "Name": "Processor",
+  "Id": "2",
+  "Socket": "CPU_2",
+  "ProcessorType": "CPU",
+  "ProcessorArchitecture": "x86",
+  "InstructionSet": "x86-64",
+  "Manufacturer": "Intel(R) Corporation",
+  "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+  "ProcessorID": {
+    "VendorID": "GenuineIntel",
+    "IdentificationRegisters": "0x34AC34DC8901274A",
+    "EffectiveFamily": "0x42",
+    "EffectiveModel": "0x61",
+    "Step": "0x1",
+    "MicrocodeInfo": "0x429943"
+  },
+  "MaxSpeedMHz": 3700,
+  "TotalCores": 8,
+  "TotalThreads": 16,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Oem": {
+    "Intel_RSA": {
+      "@odata.type": "http://rsa.intel.com/Schema#RSA.Processor",
+      "Brand": "E5"
+    }
+  }
+}
+
+2016-07-13 12:23:36.371 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/index.json
+2016-07-13 12:23:36.376 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Systems/Members/$entity",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1",
+  "@odata.type": "#ComputerSystem.1.0.1.ComputerSystem",
+  "Id": "Rack1-Block1-Sled2-Node1",
+  "Name": "G5 Computer System",
+  "SystemType": "Physical",
+  "AssetTag": "?DISABLE",
+  "Manufacturer": "Dell",
+  "Model": "METALLICA",
+  "SerialNumber": null,
+  "Description": "G5 Computer System Node",
+  "UUID": "100829ce",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Boot": {
+    "BootSourceOverrideEnabled": "DISABLED",
+    "BootSourceOverrideTarget": "NONE",
+    "BootSourceOverrideTarget@Redfish.AllowableValues": [
+      "None",
+      "Pxe",
+      "Hdd",
+      "BiosSetup",
+      "Cd",
+      "Floppy"
+    ]
+  },
+  "BiosVersion": "1.1.3",
+    "HostName": "rsaHost-Rack1-Block1-Sled2-Node1",
+    "ProcessorSummary": {
+        "Count": 2,
+        "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "MemorySummary": {
+        "TotalSystemMemoryGiB": 64,
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "Processors": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors"
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/EthernetInterfaces"
+    },
+    "SimpleStorage": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage"
+    },
+  "Links": {
+    "Chassis": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ]
+  },
+  "Actions": {
+    "#ComputerSystem.Reset": {
+      "target": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Actions/ComputerSystem.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": "02.05.05.05x1f",
+      "BmcIp": "192.168.0.120",
+      "BmcMac": "00:8C:FA:EA:31:6A"
+    },
+    "Intel_RSA": {
+      "DiscoveryState": "Basic",
+      "ProcessorSockets": 2,
+      "MemorySockets": 16
+    }
+  }
+}
+
+2016-07-13 12:23:36.377 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/EthernetInterfaces/index.json
+2016-07-13 12:23:36.382 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/EthernetInterfaces",
+    "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "Name": "Ethernet Interface Collection",
+    "Description": "Network Port Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/EthernetInterfaces/1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/EthernetInterfaces/2"
+        }
+    ],
+    "Oem": {}
+}
+
+2016-07-13 12:23:36.383 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage/index.json
+2016-07-13 12:23:36.387 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#SimpleStorageCollection.SimpleStorageCollection",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage",
+    "@odata.type": "#SimpleStorageCollection.SimpleStorageCollection",
+    "Name": "Simple Storage Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage/pch"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage/perc"
+        }
+    ]
+}
+
+2016-07-13 12:23:36.388 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage/pch/index.json
+2016-07-13 12:23:36.393 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#SimpleStorage.SimpleStorage",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage/pch",
+    "@odata.type": "#SimpleStorage.1.1.0.SimpleStorage",
+    "Id": "pch",
+    "Description": "PCH Simple Storage Controller",
+    "Name": "System_SATA",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Devices": [
+        {
+            "Name": "Drive_1",
+            "Manufacturer": "Seagate",
+            "Model": "ST2000NM0024",
+            "CapacityBytes": 1931231343200,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_2",
+            "Manufacturer": "Seagate",
+            "Model": "ST2000NM0024",
+            "CapacityBytes": 1931231343200,
+            "Status": {
+                "State": "Enabled",
+                "Health": "Degraded"
+            }
+        },
+        {
+            "Name": "Drive_3",
+            "Status": {
+                "State": "Absent"
+            }
+        },
+        {
+            "Name": "Drive_4",
+            "Status": {
+                "State": "Absent"
+            }
+        },
+        {
+            "Name": "Drive_5",
+            "Status": {
+                "State": "Absent"
+            }
+        },
+        {
+            "Name": "Drive_6",
+            "Status": {
+                "State": "Absent"
+            }
+        }
+    ]
+}
+
+2016-07-13 12:23:36.394 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage/perc/index.json
+2016-07-13 12:23:36.399 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {
+    "@odata.context": "/redfish/v1/$metadata#SimpleStorage.SimpleStorage",
+    "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage/perc",
+    "@odata.type": "#SimpleStorage.1.1.0.SimpleStorage",
+    "Id": "perc",
+    "Name": "PERC",
+    "Description": "PowerEdge RAID Card (PERC) Simple Storage Controller",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Devices": [
+        {
+            "Name": "Drive_1",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_2",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_3",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_4",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_5",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_6",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_7",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_8",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_9",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_10",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        },
+        {
+            "Name": "Drive_11",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "Degraded"
+            }
+        },
+        {
+            "Name": "Drive_12",
+            "Manufacturer": "Seagate",
+            "Model": "ST6000NM0024",
+            "CapacityBytes": 5948423507400,
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        }
+    ]
+}
+
+2016-07-13 12:23:36.401 34460 INFO plasma.common.redfish.api [req-db151de3-0fb2-4f75-abd3-832b3fc2f56d - - - - -] {'ram': '64', 'storage': '70076', 'nodeid': u'Rack1-Block1-Sled2-Node1', 'location': u'Systems:Rack1-Block1-Sled2-Node1_Sled:Rack1-Block1-Sled2_Enclosure:Rack1-Block1_Rack:Rack1_', 'cpu': {'count': '16', 'model': u'Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz', 'arch': u'x86-64'}, 'nw': '2'}
+2016-07-13 12:23:54.487 34460 INFO plasma.common.redfish.api [req-3e9bc555-2b7e-4d32-9369-ed39b94916b4 - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/index.json
+2016-07-13 12:23:54.491 34460 INFO plasma.common.redfish.api [req-3e9bc555-2b7e-4d32-9369-ed39b94916b4 - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Systems/Members/$entity",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1",
+  "@odata.type": "#ComputerSystem.1.0.1.ComputerSystem",
+  "Id": "Rack1-Block1-Sled2-Node1",
+  "Name": "G5 Computer System",
+  "SystemType": "Physical",
+  "AssetTag": "?DISABLE",
+  "Manufacturer": "Dell",
+  "Model": "METALLICA",
+  "SerialNumber": null,
+  "Description": "G5 Computer System Node",
+  "UUID": "100829ce",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Boot": {
+    "BootSourceOverrideEnabled": "DISABLED",
+    "BootSourceOverrideTarget": "NONE",
+    "BootSourceOverrideTarget@Redfish.AllowableValues": [
+      "None",
+      "Pxe",
+      "Hdd",
+      "BiosSetup",
+      "Cd",
+      "Floppy"
+    ]
+  },
+  "BiosVersion": "1.1.3",
+    "HostName": "rsaHost-Rack1-Block1-Sled2-Node1",
+    "ProcessorSummary": {
+        "Count": 2,
+        "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "MemorySummary": {
+        "TotalSystemMemoryGiB": 64,
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "Processors": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors"
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/EthernetInterfaces"
+    },
+    "SimpleStorage": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage"
+    },
+  "Links": {
+    "Chassis": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ]
+  },
+  "Actions": {
+    "#ComputerSystem.Reset": {
+      "target": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Actions/ComputerSystem.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": "02.05.05.05x1f",
+      "BmcIp": "192.168.0.120",
+      "BmcMac": "00:8C:FA:EA:31:6A"
+    },
+    "Intel_RSA": {
+      "DiscoveryState": "Basic",
+      "ProcessorSockets": 2,
+      "MemorySockets": 16
+    }
+  }
+}
+
+2016-07-13 12:23:57.002 34460 INFO plasma.common.redfish.api [req-b6020340-9e3a-40f2-8e00-2c944ba0de88 - - - - -] http://10.223.197.192:8080/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/index.json
+2016-07-13 12:23:57.007 34460 INFO plasma.common.redfish.api [req-b6020340-9e3a-40f2-8e00-2c944ba0de88 - - - - -] {
+  "@odata.context": "/redfish/v1/$metadata#Systems/Members/$entity",
+  "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1",
+  "@odata.type": "#ComputerSystem.1.0.1.ComputerSystem",
+  "Id": "Rack1-Block1-Sled2-Node1",
+  "Name": "G5 Computer System",
+  "SystemType": "Physical",
+  "AssetTag": "?DISABLE",
+  "Manufacturer": "Dell",
+  "Model": "METALLICA",
+  "SerialNumber": null,
+  "Description": "G5 Computer System Node",
+  "UUID": "100829ce",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "IndicatorLED": "Off",
+  "PowerState": "OFF",
+  "Boot": {
+    "BootSourceOverrideEnabled": "DISABLED",
+    "BootSourceOverrideTarget": "NONE",
+    "BootSourceOverrideTarget@Redfish.AllowableValues": [
+      "None",
+      "Pxe",
+      "Hdd",
+      "BiosSetup",
+      "Cd",
+      "Floppy"
+    ]
+  },
+  "BiosVersion": "1.1.3",
+    "HostName": "rsaHost-Rack1-Block1-Sled2-Node1",
+    "ProcessorSummary": {
+        "Count": 2,
+        "Model": "Intel(R) Xeon(R) CPU E5-2667 V3 @ 3.20GHz",
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "MemorySummary": {
+        "TotalSystemMemoryGiB": 64,
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK"
+        }
+    },
+    "Processors": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Processors"
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/EthernetInterfaces"
+    },
+    "SimpleStorage": {
+        "@odata.id": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/SimpleStorage"
+    },
+  "Links": {
+    "Chassis": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Rack1-Block1-Sled2"
+      }
+    ],
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-PowerBay1-MC1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/Rack1-Block1-Bc"
+      }
+    ]
+  },
+  "Actions": {
+    "#ComputerSystem.Reset": {
+      "target": "/redfish/v1/Systems/Rack1-Block1-Sled2-Node1/Actions/ComputerSystem.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulShutdown",
+        "ForceRestart",
+        "GracefulRestart"
+      ]
+    }
+  },
+  "Oem": {
+    "Dell_G5MC": {
+      "BmcVersion": "02.05.05.05x1f",
+      "BmcIp": "192.168.0.120",
+      "BmcMac": "00:8C:FA:EA:31:6A"
+    },
+    "Intel_RSA": {
+      "DiscoveryState": "Basic",
+      "ProcessorSockets": 2,
+      "MemorySockets": 16
+    }
+  }
+}
+

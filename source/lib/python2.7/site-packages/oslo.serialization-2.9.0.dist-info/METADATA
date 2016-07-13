@@ -1,0 +1,47 @@
+Metadata-Version: 2.0
+Name: oslo.serialization
+Version: 2.9.0
+Summary: Oslo Serialization library
+Home-page: http://launchpad.net/oslo
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: msgpack-python (>=0.4.0)
+Requires-Dist: oslo.utils (>=3.11.0)
+Requires-Dist: pbr (>=1.6)
+Requires-Dist: pytz (>=2013.6)
+Requires-Dist: six (>=1.9.0)
+
+====================
+ oslo.serialization
+====================
+
+.. image:: https://img.shields.io/pypi/v/oslo.serialization.svg
+    :target: https://pypi.python.org/pypi/oslo.serialization/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/dm/oslo.serialization.svg
+    :target: https://pypi.python.org/pypi/oslo.serialization/
+    :alt: Downloads
+
+The oslo.serialization library provides support for representing objects
+in transmittable and storable formats, such as Base64, JSON and MessagePack.
+
+* Free software: Apache license
+* Documentation: http://docs.openstack.org/developer/oslo.serialization
+* Source: http://git.openstack.org/cgit/openstack/oslo.serialization
+* Bugs: http://bugs.launchpad.net/oslo.serialization
+
+
+

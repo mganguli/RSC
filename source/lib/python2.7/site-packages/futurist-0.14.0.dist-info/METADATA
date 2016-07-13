@@ -1,0 +1,51 @@
+Metadata-Version: 2.0
+Name: futurist
+Version: 0.14.0
+Summary: Useful additions to futures, from the future.
+Home-page: http://www.openstack.org/
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: PrettyTable (>=0.7,<0.8)
+Requires-Dist: contextlib2 (>=0.4.0)
+Requires-Dist: monotonic (>=0.6)
+Requires-Dist: pbr (>=1.6)
+Requires-Dist: six (>=1.9.0)
+Requires-Dist: futures (>=3.0); (python_version=='2.7' or python_version=='2.6')
+
+========
+Futurist
+========
+
+.. image:: https://img.shields.io/pypi/v/futurist.svg
+    :target: https://pypi.python.org/pypi/futurist/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/dm/futurist.svg
+    :target: https://pypi.python.org/pypi/futurist/
+    :alt: Downloads
+
+Code from the future, delivered to you in the **now**. The goal of this library
+would be to provide a well documented futures classes/utilities/additions that
+allows for providing a level of transparency in how asynchronous work gets
+executed. This library currently adds statistics gathering, an eventlet
+executor, a synchronous executor etc.
+
+* Free software: Apache license
+* Documentation: http://docs.openstack.org/developer/futurist
+* Source: http://git.openstack.org/cgit/openstack/futurist
+* Bugs: http://bugs.launchpad.net/futurist
+
+
+

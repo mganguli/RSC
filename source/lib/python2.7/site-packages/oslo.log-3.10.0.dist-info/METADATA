@@ -1,0 +1,56 @@
+Metadata-Version: 2.0
+Name: oslo.log
+Version: 3.10.0
+Summary: oslo.log library
+Home-page: http://www.openstack.org
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: debtcollector (>=1.2.0)
+Requires-Dist: oslo.config (>=3.10.0)
+Requires-Dist: oslo.context (>=2.4.0)
+Requires-Dist: oslo.i18n (>=2.1.0)
+Requires-Dist: oslo.serialization (>=1.10.0)
+Requires-Dist: oslo.utils (>=3.11.0)
+Requires-Dist: pbr (>=1.6)
+Requires-Dist: python-dateutil (>=2.4.2)
+Requires-Dist: six (>=1.9.0)
+Requires-Dist: pyinotify (>=0.9.6); (sys_platform!='win32' and sys_platform!='darwin' and sys_platform!='sunos5')
+Provides-Extra: fixtures
+Requires-Dist: fixtures (>=3.0.0); extra == 'fixtures'
+
+================================
+oslo.log -- Oslo Logging Library
+================================
+
+.. image:: https://img.shields.io/pypi/v/oslo.log.svg
+    :target: https://pypi.python.org/pypi/oslo.log/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/dm/oslo.log.svg
+    :target: https://pypi.python.org/pypi/oslo.log/
+    :alt: Downloads
+
+The oslo.log (logging) configuration library provides standardized
+configuration for all openstack projects. It also provides custom
+formatters, handlers and support for context specific
+logging (like resource id's etc).
+
+* Free software: Apache license
+* Documentation: http://docs.openstack.org/developer/oslo.log
+* Source: http://git.openstack.org/cgit/openstack/oslo.log
+* Bugs: http://bugs.launchpad.net/oslo.log
+
+
+

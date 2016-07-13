@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+pika_pool.py
+setup.cfg
+setup.py
+pika_pool.egg-info/PKG-INFO
+pika_pool.egg-info/SOURCES.txt
+pika_pool.egg-info/dependency_links.txt
+pika_pool.egg-info/requires.txt
+pika_pool.egg-info/top_level.txt

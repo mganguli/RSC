@@ -1,0 +1,60 @@
+Metadata-Version: 2.0
+Name: oslo.service
+Version: 1.12.0
+Summary: oslo.service library
+Home-page: http://wiki.openstack.org/wiki/Oslo#oslo.service
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: Paste
+Requires-Dist: PasteDeploy (>=1.5.0)
+Requires-Dist: WebOb (>=1.2.3)
+Requires-Dist: eventlet (!=0.18.3,>=0.18.2)
+Requires-Dist: greenlet (>=0.3.2)
+Requires-Dist: monotonic (>=0.6)
+Requires-Dist: oslo.concurrency (>=3.8.0)
+Requires-Dist: oslo.config (>=3.10.0)
+Requires-Dist: oslo.i18n (>=2.1.0)
+Requires-Dist: oslo.log (>=1.14.0)
+Requires-Dist: oslo.utils (>=3.11.0)
+Requires-Dist: six (>=1.9.0)
+Requires-Dist: Routes (!=2.0,!=2.3.0,>=1.12.3); (python_version!='2.7')
+Requires-Dist: Routes (!=2.0,!=2.3.0,!=2.1,>=1.12.3); (python_version=='2.7')
+
+========================================================
+ oslo.service -- Library for running OpenStack services
+========================================================
+
+.. image:: https://img.shields.io/pypi/v/oslo.service.svg
+    :target: https://pypi.python.org/pypi/oslo.service/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/dm/oslo.service.svg
+    :target: https://pypi.python.org/pypi/oslo.service/
+    :alt: Downloads
+
+oslo.service provides a framework for defining new long-running
+services using the patterns established by other OpenStack
+applications. It also includes utilities long-running applications
+might need for working with SSL or WSGI, performing periodic
+operations, interacting with systemd, etc.
+
+* Free software: Apache license
+* Documentation: http://docs.openstack.org/developer/oslo.service
+* Source: http://git.openstack.org/cgit/openstack/oslo.service
+* Bugs: http://bugs.launchpad.net/oslo.service
+
+
+

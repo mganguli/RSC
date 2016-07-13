@@ -1,0 +1,15 @@
+2016-07-13 12:23:32.407 34371 INFO oslo.service.wsgi [-] Stopping WSGI server.
+2016-07-13 12:23:32.408 34371 INFO eventlet.wsgi.server [-] (34371) wsgi exited, is_accepting=True
+2016-07-13 12:23:32.716 34443 INFO plasma.api.config [-] Logging enabled!
+2016-07-13 12:23:32.718 34443 INFO plasma.api [-] Server on http://0.0.0.0:8181 with 1
+2016-07-13 12:23:32.719 34443 INFO oslo.service.wsgi [-] plasma listening on 0.0.0.0:8181
+2016-07-13 12:23:32.719 34443 INFO plasma.api [-] Configuration:
+2016-07-13 12:23:32.721 34443 WARNING oslo_config.cfg [-] Option "rabbit_host" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:32.721 34443 WARNING oslo_config.cfg [-] Option "rabbit_port" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:32.721 34443 WARNING oslo_config.cfg [-] Option "rabbit_password" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:32.722 34443 WARNING oslo_config.cfg [-] Option "rabbit_userid" from group "oslo_messaging_rabbit" is deprecated for removal.  Its value may be silently ignored in the future.
+2016-07-13 12:23:32.722 34443 INFO eventlet.wsgi.server [-] (34443) wsgi starting up on http://0.0.0.0:8181
+2016-07-13 12:23:35.680 34443 INFO eventlet.wsgi.server [-] 10.223.197.192 "GET /v1/nodes HTTP/1.1" status: 302  len: 375 time: 0.0020499
+2016-07-13 12:23:36.415 34443 INFO eventlet.wsgi.server [-] 10.223.197.192 "GET /v1/nodes/ HTTP/1.1" status: 200  len: 788 time: 0.7105539
+2016-07-13 12:23:54.494 34443 INFO eventlet.wsgi.server [-] 10.223.197.192 "GET /v1/nodes/Rack1-Block1-Sled2-Node1 HTTP/1.1" status: 200  len: 2375 time: 0.0396330
+2016-07-13 12:23:57.011 34443 INFO eventlet.wsgi.server [-] 10.223.197.192 "GET /v1/nodes/Rack1-Block1-Sled2-Node1 HTTP/1.1" status: 200  len: 2375 time: 0.0453551

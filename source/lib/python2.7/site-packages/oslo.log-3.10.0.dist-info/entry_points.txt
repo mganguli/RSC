@@ -1,0 +1,3 @@
+[oslo.config.opts]
+oslo.log = oslo_log._options:list_opts
+
