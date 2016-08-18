@@ -47,11 +47,11 @@ class BadRequest(PlasmaException):
 
 
 class NotImplemented(PlasmaException):
-    message = ("Not yet implemented  %(func_name)s: ")
+    message = ("Not yet implemented in Plasma  %(func_name)s: ")
 
 
 class NotFound(PlasmaException):
-    pass
+    message = ("URL not Found")
 
 
 class Conflict(PlasmaException):

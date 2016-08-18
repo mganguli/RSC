@@ -37,12 +37,17 @@ class Tree:
 
         fileref.write("<ul>")
         children = self[identifier].children
-        name = self[identifier].data['name'] if self[identifier].data else identifier
-        if depth == _ROOT:
-            fileref.write("<li>" + "{0}".format(name) + "[" + identifier + "]</li>")
+        if self[identifier].data:
+            name = self[identifier].data['name']
         else:
-            fileref.write("<li>" + "{0}".format(name) + "[" + identifier + "]</li>")
+            name = identifier
 
+        if depth == _ROOT:
+            htmlstr = "<li>" + name + "[" + identifier + "]</li>"
+        else:
+            htmlstr = "<li>" + name + "[" + identifier + "]</li>"
+
+        fileref.write(htmlstr)
         depth += 1
         for child in children:
             self.processHTML(fileref, child, depth)  # recursive call
@@ -71,9 +76,13 @@ class Tree:
 
     def getPath(self, identifier):
         if self[identifier].parent is not None:
-            return self[identifier].data["name"] + "_" + self.getPath(self[identifier].parent)
+            parentpath = self.getPath(self[identifier].parent)
+            return self[identifier].data["name"] + "_" + parentpath
         else:
-            return self[identifier].data['name'] if self[identifier].data else ""
+                if self[identifier].data:
+                    return self[identifier].data['name']
+                else:
+                    return ""
 
     def __getitem__(self, key):
         return self.__nodes[key]

@@ -13,30 +13,41 @@
 #    under the License.
 
 from plasma.common.redfish import api as rfs
-import plasma.flavor.plugins
+from plasma.flavor.plugins import *
+from importlib import import_module
 from oslo_log import log as logging
 import json
 import sys
-import os 
+import os
 
-FLAVOR_PLUGIN_PATH = os.path.dirname(os.path.abspath(__file__))+ '/plugins'
+FLAVOR_PLUGIN_PATH = os.path.dirname(os.path.abspath(__file__)) + '/plugins'
 logger = logging.getLogger()
 
+
 def get_available_criteria():
-    pluginfiles = [f.split(".")[0] 
-                       for f in os.listdir(FLAVOR_PLUGIN_PATH) 
-			   if os.path.isfile(os.path.join(FLAVOR_PLUGIN_PATH, f)) and not f.startswith('__') and f.endswith('.py')]
-    return {"criteria" : pluginfiles}
+    pluginfiles = [f.split('.')[0]
+                   for f in os.listdir(FLAVOR_PLUGIN_PATH)
+                   if os.path.isfile(os.path.join(FLAVOR_PLUGIN_PATH, f))
+                   and not f.startswith('__') and f.endswith('.py')]
+    resp = []
+    for p in pluginfiles:
+        module = import_module("plasma.flavor.plugins."+p)
+	myclass = getattr(module, p + 'Generator' )
+	inst = myclass([])
+        resp.append({ 'name': p, 'description': inst.description()})
+    return { 'criteria' : resp }
+
 
 def create_flavors(criteria):
-    #criteria : comma seperated generator names (should be same as thier file name)
+    """criteria : comma seperated generator names
+    (should be same as thier file name)"""
     respjson = []
-    lst_nodes = rfs.nodes_full_list()
+    lst_nodes = rfs.systems_list()
     for g in criteria.split(","):
-       if g:
-	logger.info("Calling generator : %s ." % g)
-        module = __import__("plasma.flavor.plugins." + g, fromlist = ["*"])
-        classobj = getattr(module, g+"Generator")
-        inst = classobj(lst_nodes)
-        respjson.append(inst.generate())
+        if g:
+            logger.info("Calling generator : %s ." % g)
+            module = __import__("plasma.flavor.plugins." + g, fromlist=["*"])
+            classobj = getattr(module, g+"Generator")
+            inst = classobj(lst_nodes)
+            respjson.append(inst.generate())
     return respjson

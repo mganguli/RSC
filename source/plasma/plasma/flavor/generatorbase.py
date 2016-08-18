@@ -15,17 +15,23 @@
 import json
 import uuid
 
+
 class generatorbase:
-   def __init__(self, nodes):
-     self.nodes = nodes
-     self.prepend_name = 'irsd-'
-   
-   def description(self):
-      return "Description of plugins"
+    def __init__(self, nodes):
+        self.nodes = nodes
+        self.prepend_name = 'irsd-'
 
-   def _flavor_template(self, name, ram, cpus, disk, extraspecs):
-      return json.dumps([{ "flavor": { "name": name, "ram": int(ram), "vcpus": int(cpus), "disk": int(disk), "id" : str(uuid.uuid4())}},
-						{ "extra_specs": extraspecs} ])
+    def description(self):
+        return "Description of plugins"
 
-   def generate(self):
-      raise NotImplementedError()
+    def _flavor_template(self, name, ram, cpus, disk, extraspecs):
+        return json.dumps([{"flavor":
+                           {"name": name,
+                            "ram": int(ram),
+                            "vcpus": int(cpus),
+                            "disk": int(disk),
+                            "id": str(uuid.uuid4())}},
+                           {"extra_specs": extraspecs}])
+
+    def generate(self):
+        raise NotImplementedError()

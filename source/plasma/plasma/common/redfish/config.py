@@ -20,15 +20,14 @@ from oslo_config import cfg
 podm_opts = [
     cfg.StrOpt('url',
                default='http://localhost:80',
-  	       help=("The complete url string of PODM")),
+               help=("The complete url string of PODM")),
     cfg.StrOpt('user',
                default='admin',
-	       help=("User for the PODM")),
+               help=("User for the PODM")),
     cfg.StrOpt('password',
                default='admin',
-	       help=("Passowrd for PODM"))]
+               help=("Passoword for PODM"))]
 
 podm_conf_group = cfg.OptGroup(name='podm', title='Plasma PODM options')
 cfg.CONF.register_group(podm_conf_group)
 cfg.CONF.register_opts(podm_opts, group=podm_conf_group)
-

@@ -33,6 +33,7 @@ oslo.utils>=3.13.0
 oslo.versionedobjects>=1.12.0
 pbr>=1.10.0
 pecan>=1.1.1
+requests>=2.10.0
 six>=1.10.0
 stevedore>=1.15.0
 waitress>=0.9.0
