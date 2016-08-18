@@ -1,3 +1,0 @@
-[oslo.config.opts]
-oslo.reports = oslo_reports.opts:list_opts
-
