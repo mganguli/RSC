@@ -10,6 +10,12 @@
     "disassemble"
   ],
   "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "jquery": "^3.1.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  },
+  "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.0",
     "babel-plugin-add-module-exports": "^0.1.2",
@@ -19,12 +25,18 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6",
+    "bootstrap-loader": "^1.1.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "imports-loader": "^0.6.5",
+    "node-sass": "^3.8.0",
+    "resolve-url-loader": "^1.6.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
-  },
-  "devDependencies": {
   },
   "scripts": {
     "devserver": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --progress --colors --content-base src --inline --hot --host 0.0.0.0",
@@ -35,9 +47,15 @@
     "package:reinstall": "npm run package:purge && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "contributors": [{
-    "name": "Deepti Ramakrishna",
-    "email": "deepti.ramakrishna@intel.com"
-  }],
+  "contributors": [
+    {
+      "name": "Deepti Ramakrishna",
+      "email": "deepti.ramakrishna@intel.com"
+    },
+    {
+      "name": "Lin Yang",
+      "email": "lin.a.yang@intel.com"
+    }
+  ],
   "license": "Apache-2.0"
 }
