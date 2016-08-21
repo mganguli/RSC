@@ -6,13 +6,13 @@ The `ui` folder contains HTML, JavaScript and CSS code for a Web UI that can be 
 ##Pre-reqs
 1. Install Node and NPM using the OS-specific installer on <https://nodejs.org/en/download/>
 2. Update npm to the latest verions
-   ```shell
+   ```
    sudo npm install npm -g
    ```
 
 ##Install
 1. `cd` to the `ui` directory and run:
-   ```shell
+   ```
    npm install
    ```
    * This will install all packages listed in `package.json` file.
