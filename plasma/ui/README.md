@@ -1,7 +1,7 @@
 Rack Scale Design (RSD) Web UI
 ==============================
 
-The `UI` folder contains HTML, JavaScript and CSS code for a Web UI that can be used to explore Rack Scale Design (RSD) artifacts and compose/disassemble nodes.
+The `ui` folder contains HTML, JavaScript and CSS code for a Web UI that can be used to explore Rack Scale Design (RSD) artifacts and compose/disassemble nodes.
 
 ##Pre-reqs
 1. Install Node and NPM using the OS-specific installer on <https://nodejs.org/en/download/>
@@ -11,7 +11,7 @@ The `UI` folder contains HTML, JavaScript and CSS code for a Web UI that can be 
    ```
 
 ##Install
-1. `cd` to the `UI` directory and run:
+1. `cd` to the `ui` directory and run:
    ```shell
    npm install
    ```
