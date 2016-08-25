@@ -1,6 +1,6 @@
 import React from "react";
 import {mockSystems} from "./MockData";
-import CollapsibleItemList from "./CollapsibleItemList";
+import ItemList from "./ItemList";
 
 export default class Systems extends React.Component {
   componentWillMount() {
@@ -14,7 +14,7 @@ export default class Systems extends React.Component {
 
   render() {
     return (
-      <CollapsibleItemList items={this.state.systems} header="SYSTEMS" />
+      <ItemList items={this.state.systems} header="SYSTEMS" />
     );
   }
 }

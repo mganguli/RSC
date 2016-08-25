@@ -1,6 +1,6 @@
 import React from "react";
 import {mockComposedNodes} from "./MockData";
-import CollapsibleItemList from "./CollapsibleItemList";
+import ItemList from "./ItemList";
 
 export default class ComposedNodes extends React.Component {
   componentWillMount() {
@@ -14,7 +14,7 @@ export default class ComposedNodes extends React.Component {
 
   render() {
     return (
-      <CollapsibleItemList items={this.state.composedNodes} header="COMPOSED NODES" />
+      <ItemList items={this.state.composedNodes} header="COMPOSED NODES" />
     );
   }
 }

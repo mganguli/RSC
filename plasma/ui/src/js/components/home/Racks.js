@@ -1,6 +1,6 @@
 import React from "react";
 import {mockRacks} from "./MockData";
-import CollapsibleItemList from "./CollapsibleItemList";
+import ItemList from "./ItemList";
 
 export default class Racks extends React.Component {
   componentWillMount() {
@@ -14,7 +14,7 @@ export default class Racks extends React.Component {
 
   render() {
     return (
-      <CollapsibleItemList items={this.state.racks} header="RACKS" />
+      <ItemList items={this.state.racks} header="RACKS" />
     );
   }
 }
