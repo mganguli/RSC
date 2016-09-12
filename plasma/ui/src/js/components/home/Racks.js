@@ -14,7 +14,6 @@ const Racks = React.createClass({
   },
 
   getRacks() {
-    var racks;
     var url = 'http://127.0.0.1:6000/redfish/v1/Chassis';
     $.ajax({
       url: url,
@@ -22,7 +21,8 @@ const Racks = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(resp) {
-        racks = util.filterChassis(resp, 'Rack');
+        var chassis = util.listMembers(resp)
+        var racks = util.filterChassis(chassis, 'Rack');
         this.setData(racks);
       }.bind(this),
       error: function(xhr, status, err) {

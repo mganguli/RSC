@@ -14,7 +14,6 @@ const Pods = React.createClass({
   },
 
   getPods() {
-    var pods;
     var url = 'http://127.0.0.1:6000/redfish/v1/Chassis';
     $.ajax({
       url: url,
@@ -22,7 +21,8 @@ const Pods = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(resp) {
-        pods = util.filterChassis(resp, 'Pod');
+        var chassis = util.listMembers(resp);
+        var pods = util.filterChassis(chassis, 'Pod');
         this.setData(pods);
       }.bind(this),
       error: function(xhr, status, err) {

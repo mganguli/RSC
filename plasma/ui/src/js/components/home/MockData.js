@@ -1,14 +1,3 @@
-const mockSystems = [{
-	Name: "system1",
-	Description: "system1 description"
-}, {
-	Name: "system2",
-	Description: "system2 description"
-}, {
-	Name: "system3",
-	Description: "system3 description"
-},];
-
 const mockComposedNodes = [{
 	Name: "composedNode1",
 	Description: "composedNode1 description"
@@ -23,4 +12,4 @@ const mockComposedNodes = [{
 	Description: "composedNode4 description"
 },];
 
-export { mockSystems, mockComposedNodes };
+export { mockComposedNodes };
