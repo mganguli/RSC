@@ -9,6 +9,7 @@ The `ui` folder contains HTML, JavaScript and CSS code for a Web UI that can be 
    ```
    sudo npm install npm -g
    ```
+3. Follow the instructions in the docs directory for setting up the apache ui-proxy.
 
 ##Install
 1. `cd` to the `ui` directory and run:
