@@ -1,20 +1,45 @@
 import React from "react";
-import {mockRacks} from "./MockData";
 import ItemList from "./ItemList";
 
-export default class Racks extends React.Component {
-  componentWillMount() {
-     var racks = this.getRacks();
-     this.setState({racks: racks});
-   }
+var util = require('./util.js')
 
-   getRacks() {
-     return mockRacks;
-   }
+const Racks = React.createClass({
+
+  getInitialState() {
+    return {racks: []};
+  },
+
+  componentWillMount() {
+    this.getRacks();
+  },
+
+  getRacks() {
+    var racks;
+    var url = 'http://127.0.0.1:6000/redfish/v1/Chassis';
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'json',
+      cache: false,
+      success: function(resp) {
+        racks = util.filterChassis(resp, 'Rack');
+        this.setData(racks);
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(url, status, err.toString());
+      }.bind(this)
+    });
+  },
+
+  setData(racks) {
+    this.setState({racks: racks});
+  },
 
   render() {
     return (
       <ItemList items={this.state.racks} header="RACKS" />
     );
   }
-}
+});
+
+export default Racks
