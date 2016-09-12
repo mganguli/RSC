@@ -1,48 +1,34 @@
-const mockPods = [{
-	name: "pod1",
-	description: "pod1 description"
-}, {
-	name: "pod2",
-	description: "pod2 description"
-}, {
-	name: "pod3",
-	description: "pod3 description"
-}, {
-	name: "pod4",
-	description: "pod4 description"
-},];
-
 const mockRacks = [{
-	name: "rack1",
-	description: "rack1 description"
+	Name: "rack1",
+	Description: "rack1 description"
 }, {
-	name: "rack2",
-	description: "rack2 description"
+	Name: "rack2",
+	Description: "rack2 description"
 },];
 
 const mockSystems = [{
-	name: "system1",
-	description: "system1 description"
+	Name: "system1",
+	Description: "system1 description"
 }, {
-	name: "system2",
-	description: "system2 description"
+	Name: "system2",
+	Description: "system2 description"
 }, {
-	name: "system3",
-	description: "system3 description"
+	Name: "system3",
+	Description: "system3 description"
 },];
 
 const mockComposedNodes = [{
-	name: "composedNode1",
-	description: "composedNode1 description"
+	Name: "composedNode1",
+	Description: "composedNode1 description"
 }, {
-	name: "composedNode2",
-	description: "composedNode2 description"
+	Name: "composedNode2",
+	Description: "composedNode2 description"
 }, {
-	name: "composedNode3",
-	description: "composedNode3 description"
+	Name: "composedNode3",
+	Description: "composedNode3 description"
 }, {
-	name: "composedNode4",
-	description: "composedNode4 description"
+	Name: "composedNode4",
+	Description: "composedNode4 description"
 },];
 
-export { mockPods, mockRacks, mockSystems, mockComposedNodes };
+export { mockRacks, mockSystems, mockComposedNodes };
