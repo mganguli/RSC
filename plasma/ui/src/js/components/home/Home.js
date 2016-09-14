@@ -1,13 +1,46 @@
 import React from "react";
 
-import Pods from "./Pods";
-import Racks from "./Racks";
-import Systems from "./Systems";
-import ComposedNodes from "./ComposedNodes";
+import PodList from "./PodList";
+import PodDetail from "./PodDetail";
+import RackList from "./RackList";
+import RackDetail from "./RackDetail";
+import SystemList from "./SystemList";
+import SystemDetail from "./SystemDetail";
+import ComposedNodeList from "./ComposedNodeList";
+import ComposedNodeDetail from "./ComposedNodeDetail";
 
-export default class Home extends React.Component {
+const Home = React.createClass({
 
-  render() {
+  getInitialState: function() {
+    return {
+      detail: "",
+      detailDisplay: "none"
+    };
+  },
+
+  handleShowDetail: function(item, itemType) {
+    if (itemType == "PODS") {
+      this.setState({detail: <PodDetail pod={item} />});
+    } else if (itemType == "RACKS") {
+      this.setState({detail: <RackDetail rack={item} />});
+    } else if (itemType == "SYSTEMS") {
+      this.setState({detail: <SystemDetail system={item} />});
+    } else {
+      this.setState({detail: <ComposedNodeDetail node={item} />});
+    }
+    this.setState({
+      detailDisplay: "inline-block"
+    });
+  },
+
+  handleHideDetail: function() {
+    this.setState({
+      detail: "",
+      detailDisplay: "none"
+    });
+  },
+
+  render: function() {
     return (
       <div>
         <div class="jumbotron">
@@ -30,15 +63,23 @@ export default class Home extends React.Component {
             </div>
             <div class="col-sm-9 col-md-10 main">
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="pods"><Pods /></div>
-                <div role="tabpanel" class="tab-pane" id="racks"><Racks /></div>
-                <div role="tabpanel" class="tab-pane" id="systems"><Systems /></div>
-                <div role="tabpanel" class="tab-pane" id="composednodes"><ComposedNodes /></div>
+                <div role="tabpanel" class="tab-pane active" id="pods"><PodList onShowDetail={this.handleShowDetail} /></div>
+                <div role="tabpanel" class="tab-pane" id="racks"><RackList onShowDetail={this.handleShowDetail} /></div>
+                <div role="tabpanel" class="tab-pane" id="systems"><SystemList onShowDetail={this.handleShowDetail} /></div>
+                <div role="tabpanel" class="tab-pane" id="composednodes"><ComposedNodeList onShowDetail={this.handleShowDetail} /></div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="details" style={{display: this.state.detailDisplay}}>
+          {this.state.detail}
+          <input type="button" class="detail-button" onClick={() => this.handleHideDetail()} value="Hide Details" />
+        </div>
+
       </div>
     );
   }
-}
+});
+
+export default Home

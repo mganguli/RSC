@@ -4,27 +4,27 @@ import ItemList from "./ItemList";
 var config = require('../../../config.js');
 var util = require('./util.js');
 
-const Systems = React.createClass({
+const RackList = React.createClass({
 
   getInitialState() {
-    return {systems: []};
+    return {racks: []};
   },
 
   componentWillMount() {
-    this.getSystems();
+    this.getRacks();
   },
 
-  getSystems() {
-    var systems;
-    var url = config.url + '/redfish/v1/Systems';
+  getRacks() {
+    var url = config.url + '/redfish/v1/Chassis';
     $.ajax({
       url: url,
       type: 'GET',
       dataType: 'json',
       cache: false,
       success: function(resp) {
-        systems = util.listMembers(resp);
-        this.setData(systems);
+        var chassis = util.listMembers(resp)
+        var racks = util.filterChassis(chassis, 'Rack');
+        this.setData(racks);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
@@ -32,15 +32,15 @@ const Systems = React.createClass({
     });
   },
 
-  setData(systems) {
-    this.setState({systems: systems});
+  setData(racks) {
+    this.setState({racks: racks});
   },
 
   render() {
     return (
-      <ItemList items={this.state.systems} header="SYSTEMS" />
+      <ItemList onShowDetail={this.props.onShowDetail} items={this.state.racks} header="RACKS" />
     );
   }
 });
 
-export default Systems
+export default RackList

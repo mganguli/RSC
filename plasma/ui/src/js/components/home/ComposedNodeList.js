@@ -4,27 +4,27 @@ import ItemList from "./ItemList";
 var config = require('../../../config.js');
 var util = require('./util.js');
 
-const Racks = React.createClass({
+const ComposedNodeList = React.createClass({
 
   getInitialState() {
-    return {racks: []};
+    return {composedNodes: []};
   },
 
   componentWillMount() {
-    this.getRacks();
+    this.getComposedNodes();
   },
 
-  getRacks() {
-    var url = config.url + '/redfish/v1/Chassis';
+  getComposedNodes() {
+    var composedNodes;
+    var url = config.url + '/redfish/v1/Nodes';
     $.ajax({
       url: url,
       type: 'GET',
       dataType: 'json',
       cache: false,
       success: function(resp) {
-        var chassis = util.listMembers(resp)
-        var racks = util.filterChassis(chassis, 'Rack');
-        this.setData(racks);
+        composedNodes = util.listMembers(resp);
+        this.setData(composedNodes);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
@@ -32,15 +32,15 @@ const Racks = React.createClass({
     });
   },
 
-  setData(racks) {
-    this.setState({racks: racks});
+  setData(composedNodes) {
+    this.setState({composedNodes: composedNodes});
   },
 
   render() {
     return (
-      <ItemList items={this.state.racks} header="RACKS" />
+      <ItemList onShowDetail={this.props.onShowDetail} items={this.state.composedNodes} header="COMPOSED NODES" />
     );
   }
 });
 
-export default Racks
+export default ComposedNodeList

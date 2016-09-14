@@ -4,27 +4,27 @@ import ItemList from "./ItemList";
 var config = require('../../../config.js');
 var util = require('./util.js');
 
-const ComposedNodes = React.createClass({
+const SystemList = React.createClass({
 
   getInitialState() {
-    return {composedNodes: []};
+    return {systems: []};
   },
 
   componentWillMount() {
-    this.getComposedNodes();
+    this.getSystems();
   },
 
-  getComposedNodes() {
-    var composedNodes;
-    var url = config.url + '/redfish/v1/Nodes';
+  getSystems() {
+    var systems;
+    var url = config.url + '/redfish/v1/Systems';
     $.ajax({
       url: url,
       type: 'GET',
       dataType: 'json',
       cache: false,
       success: function(resp) {
-        composedNodes = util.listMembers(resp);
-        this.setData(composedNodes);
+        systems = util.listMembers(resp);
+        this.setData(systems);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
@@ -32,15 +32,15 @@ const ComposedNodes = React.createClass({
     });
   },
 
-  setData(composedNodes) {
-    this.setState({composedNodes: composedNodes});
+  setData(systems) {
+    this.setState({systems: systems});
   },
 
   render() {
     return (
-      <ItemList items={this.state.composedNodes} header="COMPOSED NODES" />
+      <ItemList onShowDetail={this.props.onShowDetail} items={this.state.systems} header="SYSTEMS" />
     );
   }
 });
 
-export default ComposedNodes
+export default SystemList
