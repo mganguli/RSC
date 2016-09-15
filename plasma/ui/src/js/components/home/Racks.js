@@ -1,7 +1,8 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-var util = require('./util.js')
+var config = require('../../../config.js');
+var util = require('./util.js');
 
 const Racks = React.createClass({
 
@@ -14,7 +15,7 @@ const Racks = React.createClass({
   },
 
   getRacks() {
-    var url = 'http://127.0.0.1:6000/redfish/v1/Chassis';
+    var url = config.url + '/redfish/v1/Chassis';
     $.ajax({
       url: url,
       type: 'GET',

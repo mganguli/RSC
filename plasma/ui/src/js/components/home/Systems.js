@@ -1,6 +1,7 @@
 import React from "react";
 import ItemList from "./ItemList";
 
+var config = require('../../../config.js');
 var util = require('./util.js');
 
 const Systems = React.createClass({
@@ -15,7 +16,7 @@ const Systems = React.createClass({
 
   getSystems() {
     var systems;
-    var url = 'http://127.0.0.1:6000/redfish/v1/Systems';
+    var url = config.url + '/redfish/v1/Systems';
     $.ajax({
       url: url,
       type: 'GET',

@@ -1,6 +1,7 @@
 import React from "react";
 import ItemList from "./ItemList";
 
+var config = require('../../../config.js');
 var util = require('./util.js');
 
 const ComposedNodes = React.createClass({
@@ -15,7 +16,7 @@ const ComposedNodes = React.createClass({
 
   getComposedNodes() {
     var composedNodes;
-    var url = 'http://127.0.0.1:6000/redfish/v1/Nodes';
+    var url = config.url + '/redfish/v1/Nodes';
     $.ajax({
       url: url,
       type: 'GET',

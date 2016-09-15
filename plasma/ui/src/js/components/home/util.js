@@ -1,3 +1,5 @@
+var config = require('../../../config.js');
+
 exports.listMembers = function(jsonContent) {
   var returnMembers = [];
   var members = jsonContent['Members'];
@@ -29,7 +31,7 @@ exports.filterChassis = function(memberList, filter) {
 };  
 
 exports.readAndReturn = function(resource) {
-  var url = 'http://127.0.0.1:6000' + resource;
+  var url = config.url + resource;
   return $.ajax({
     url: url,
     type: 'GET',
