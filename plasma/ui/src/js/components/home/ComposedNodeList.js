@@ -1,8 +1,8 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-var config = require('../../../config.js');
-var util = require('./util.js');
+var config = require('../../config.js');
+var util = require('../../util.js');
 
 const ComposedNodeList = React.createClass({
 

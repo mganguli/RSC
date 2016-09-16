@@ -1,4 +1,4 @@
-var config = require('../../../config.js');
+var config = require('./config.js');
 
 exports.listMembers = function(jsonContent) {
   var returnMembers = [];

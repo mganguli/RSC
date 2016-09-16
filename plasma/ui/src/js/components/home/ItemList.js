@@ -1,6 +1,6 @@
 import React from "react";
 
-var util = require('./util.js');
+var util = require('../../util.js');
 
 const ItemList = React.createClass({
 
