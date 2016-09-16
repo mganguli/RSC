@@ -4,7 +4,7 @@ import ItemList from "./ItemList";
 var config = require('../../../config.js');
 var util = require('./util.js');
 
-const Pods = React.createClass({
+const PodList = React.createClass({
 
   getInitialState() {
     return {pods: []};
@@ -38,9 +38,9 @@ const Pods = React.createClass({
 
   render() {
     return (
-      <ItemList items={this.state.pods} header="PODS" />
+      <ItemList onShowDetail={this.props.onShowDetail} items={this.state.pods} header="PODS" />
     );
   }
 });
 
-export default Pods
+export default PodList

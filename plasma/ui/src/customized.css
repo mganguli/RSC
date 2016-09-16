@@ -41,6 +41,31 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+hr.separator {
+  background-color: #c0c0c0;
+  height: 2px;
+}
+
+.detail-button {
+  background-color: #428bca;
+  border: none;
+  color: white;
+  padding: 6px 18px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  float: right;
+}
+
+.details {
+  margin-top: 30px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
 /*
  * Sidebar
  */
