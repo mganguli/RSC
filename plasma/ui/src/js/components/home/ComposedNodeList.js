@@ -1,5 +1,5 @@
 import React from "react";
-import ItemList from "./ItemList";
+import NodeList from "./NodeList";
 
 var config = require('../../config.js');
 var util = require('../../util.js');
@@ -12,6 +12,7 @@ const ComposedNodeList = React.createClass({
 
   componentWillMount() {
     this.getComposedNodes();
+    setInterval(this.getComposedNodes, 2000);
   },
 
   getComposedNodes() {
@@ -38,7 +39,7 @@ const ComposedNodeList = React.createClass({
 
   render() {
     return (
-      <ItemList onShowDetail={this.props.onShowDetail} items={this.state.composedNodes} header="COMPOSED NODES" />
+      <NodeList onShowDetail={this.props.onShowDetail} items={this.state.composedNodes} header="COMPOSED NODES" />
     );
   }
 });
