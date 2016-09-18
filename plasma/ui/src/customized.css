@@ -52,6 +52,7 @@ hr.separator {
   border: none;
   color: white;
   padding: 6px 18px;
+  margin-right: 6px;
   text-align: center;
   display: inline-block;
   border-radius: 4px;
