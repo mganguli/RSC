@@ -1,3 +1,3 @@
-Plasma API and mockup file.
+RSC API spec and RSC mockup file.
 
-chester.kuo@intel.com
+<chester.kuo@intel.com>
