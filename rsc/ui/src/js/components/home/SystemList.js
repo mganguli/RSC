@@ -12,6 +12,7 @@ const SystemList = React.createClass({
 
   componentWillMount() {
     this.getSystems();
+    setInterval(this.getSystems, 2000);
   },
 
   getSystems() {

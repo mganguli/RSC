@@ -12,6 +12,7 @@ const RackList = React.createClass({
 
   componentWillMount() {
     this.getRacks();
+    setInterval(this.getRacks, 2000);
   },
 
   getRacks() {
