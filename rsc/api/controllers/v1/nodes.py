@@ -12,16 +12,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import pecan
-from pecan import expose, rest, request
-from pecan.rest import RestController
-import oslo_messaging as messaging
 from oslo_config import cfg
 from oslo_log import log as logging
-from plasma.common import exceptions
-from plasma.common import rpc
-from plasma.common import context
-from plasma.controller import api as controller_api
+import pecan
+from pecan import expose
+from pecan import request
+from pecan.rest import RestController
+from RSC.controller import api as controller_api
 
 CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
@@ -34,6 +31,7 @@ class NodeDetailController(object):
     @expose()
     def storages(self):
         pecan.abort(501, "/nodes/node id/storages")
+
 
 class NodesController(RestController):
 

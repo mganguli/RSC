@@ -19,11 +19,11 @@ from oslo_config import cfg
 from oslo_log import log as logging
 from oslo_service import wsgi
 
-from plasma.api import config as api_config
-from plasma.api import app
+from rsc.api import app
+from rsc.api import config as api_config
 
 CONF = cfg.CONF
-LOG = logging.getLogger('plasma.api')
+LOG = logging.getLogger('rsc.api')
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
     LOG.info(("Server on http://%(host)s:%(port)s with %(workers)s"),
              {'host': host, 'port': port, 'workers': workers})
 
-    service = wsgi.Server(CONF, "plasma", application, host, port)
+    service = wsgi.Server(CONF, "rsc", application, host, port)
 
     app.serve(service, CONF, workers)
 

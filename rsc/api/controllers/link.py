@@ -14,8 +14,8 @@
 
 
 import pecan
-from plasma.api.controllers import types
-from plasma.api.controllers import base
+from rsc.api.controllers import base
+from rsc.api.controllers import types
 
 
 def build_url(resource, resource_args, bookmark=False, base_url=None):

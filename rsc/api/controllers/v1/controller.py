@@ -12,12 +12,14 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from pecan import route, expose, request
-from plasma.api.controllers.v1 import flavor as v1flavor
-from plasma.api.controllers.v1 import nodes as v1nodes
-from plasma.api.controllers import base 
-from plasma.api.controllers import link
-from plasma.api.controllers import types
+from pecan import expose
+from pecan import request
+from pecan import route
+from rsc.api.controllers import base
+from rsc.api.controllers import link
+from rsc.api.controllers import types
+from rsc.api.controllers.v1 import flavor as v1flavor
+from rsc.api.controllers.v1 import nodes as v1nodes
 
 
 class MediaType(base.APIBase):
@@ -59,11 +61,11 @@ class V1(base.APIBase):
                                         'v1', '', bookmark=True),
                     link.Link.make_link('describedby',
                                         'http://docs.openstack.org',
-                                        'developer/plasma/dev',
+                                        'developer/rsc/dev',
                                         'api-spec-v1.html',
                                         bookmark=True, type='text/html')]
         v1.media_types = [MediaType(base='application/json',
-                          type='application/vnd.openstack.plasma.v1+json')]
+                          type='application/vnd.openstack.rsc.v1+json')]
         v1.services = [link.Link.make_link('self', request.host_url,
                                            'services', ''),
                        link.Link.make_link('bookmark',
@@ -78,5 +80,5 @@ class V1Controller(object):
     def index(self):
         return V1.convert()
 
-route(V1Controller, 'flavor',  v1flavor.FlavorController())
-route(V1Controller, 'nodes',  v1nodes.NodesController())
+route(V1Controller, 'flavor', v1flavor.FlavorController())
+route(V1Controller, 'nodes', v1nodes.NodesController())

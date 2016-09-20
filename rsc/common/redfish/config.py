@@ -28,6 +28,6 @@ podm_opts = [
                default='admin',
                help=("Passoword for PODM"))]
 
-podm_conf_group = cfg.OptGroup(name='podm', title='Plasma PODM options')
+podm_conf_group = cfg.OptGroup(name='podm', title='RSC PODM options')
 cfg.CONF.register_group(podm_conf_group)
 cfg.CONF.register_opts(podm_opts, group=podm_conf_group)

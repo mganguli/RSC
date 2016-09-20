@@ -13,16 +13,17 @@
 #    under the License.
 
 from oslo_log import log as logging
-from plasma.common.redfish import api as rfsapi
-from plasma.flavor import flavor
+from rsc.flavor import flavor
 
 LOG = logging.getLogger(__name__)
 
 
 class Handler(object):
-    """Plasma Flavor RPC handler.
+    """RSC Flavor RPC handler.
+
     These are the backend operations. They are executed by the backend ervice.
     API calls via AMQP (within the ReST API) trigger the handlers to be called.
+
     """
 
     def __init__(self):

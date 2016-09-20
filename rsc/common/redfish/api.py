@@ -13,23 +13,20 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import urllib2
-import urllib
 import json
-import sys
-import traceback
-import os
-from oslo_log import log as logging
 from oslo_config import cfg
-from plasma.common.redfish import tree
+from oslo_log import log as logging
+from rsc.common.redfish import tree
+import urllib2
 
 LOG = logging.getLogger(__name__)
-cfg.CONF.import_group('podm', 'plasma.common.redfish.config')
+cfg.CONF.import_group('podm', 'rsc.common.redfish.config')
 
 
 def get_rfs_url(serviceext):
     REDFISH_BASE_EXT = "/redfish/v1/"
-    INDEX = '/index.json'
+    INDEX = '' 
+    # '/index.json'
     if REDFISH_BASE_EXT in serviceext:
         return cfg.CONF.podm.url + serviceext + INDEX
     else:
@@ -55,7 +52,7 @@ def filter_chassis(jsonContent, filterCondition):
     returnMembers = []
     parsed = json.loads(jsonContent)
     members = parsed['Members']
-    count = parsed['Members@odata.count']
+    # count = parsed['Members@odata.count']
     for member in members:
         resource = member['@odata.id']
         memberJson = send_request(resource)
@@ -63,14 +60,14 @@ def filter_chassis(jsonContent, filterCondition):
         chassisType = memberJsonObj['ChassisType']
         if chassisType == filterCondition:
             returnMembers.append(member)
-            # print(resource)
         returnJSONObj["Members"] = returnMembers
         returnJSONObj["Members@odata.count"] = len(returnMembers)
     return returnJSONObj
 
+
 def generic_filter(jsonContent, filterConditions):
     # returns boolean based on filters..its generic filter
-    returnMembers = []
+    # returnMembers = []
     is_filter_passed = False
     for fc in filterConditions:
         if fc in jsonContent:
@@ -78,7 +75,7 @@ def generic_filter(jsonContent, filterConditions):
                 is_filter_passed = True
             else:
                 is_filter_passed = False
-	        break
+            break
         elif "/" in fc:
             querylst = fc.split("/")
             tmp = jsonContent
@@ -96,9 +93,8 @@ def generic_filter(jsonContent, filterConditions):
 
 
 def get_details(source):
-    returnJSONObj = {}
-    returnMembers = []
-    count = source['Members@odata.count']
+    # count = source['Members@odata.count']
+    returnJSONObj = []
     members = source['Members']
     for member in members:
         resource = member['@odata.id']
@@ -109,8 +105,7 @@ def get_details(source):
 
 
 def systemdetails():
-    returnJSONObj = {}
-    returnJSONMembers = []
+    returnJSONObj = []
     parsed = send_request('Systems')
     members = parsed['Members']
     for member in members:
@@ -122,8 +117,7 @@ def systemdetails():
 
 
 def nodedetails():
-    returnJSONObj = {}
-    returnJSONMembers = []
+    returnJSONObj = []
     parsed = send_request('Nodes')
     members = parsed['Members']
     for member in members:
@@ -162,8 +156,6 @@ def pods():
 def urls2list(url):
     # This will extract the url values from @odata.id inside Members
     respdata = send_request(url)
-    print type(respdata).__name__
-    print respdata
     return [u['@odata.id'] for u in respdata['Members']]
 
 
@@ -219,16 +211,18 @@ def node_storage_details(nodeurl):
                     storagecnt += sd["CapacityBytes"]
     LOG.debug("Total storage for node %s : %d " % (nodeurl, storagecnt))
     # to convert Bytes in to GB. Divide by 1073741824
-    return str(storagecnt/1073741824).split(".")[0]
+    return str(storagecnt / 1073741824).split(".")[0]
 
 
 def systems_list(count=None, filters={}):
     # comment the count value which is set to 2 now..
     # list of nodes with hardware details needed for flavor creation
-    count = 2
+    # count = 2
     lst_nodes = []
     systemurllist = urls2list("Systems")
     podmtree = build_hierarchy_tree()
+    #podmtree.writeHTML("0","/tmp/a.html")
+
     for lnk in systemurllist[:count]:
         filterPassed = True
         system = send_request(lnk)
@@ -236,9 +230,9 @@ def systems_list(count=None, filters={}):
         # this below code need to be changed when proper query mechanism
         # is implemented
         if any(filters):
-             filterPassed = generic_filter(system, filters)
+            filterPassed = generic_filter(system, filters)
         if not filterPassed:
-              continue
+            continue
 
         nodeid = lnk.split("/")[-1]
         nodeuuid = system['UUID']
@@ -247,30 +241,34 @@ def systems_list(count=None, filters={}):
         ram = node_ram_details(lnk)
         nw = node_nw_details(lnk)
         storage = node_storage_details(lnk)
-        bmcip = system['Oem']['Dell_G5MC']['BmcIp']
-        bmcmac = system['Oem']['Dell_G5MC']['BmcMac']
+        bmcip = "127.0.0.1" #system['Oem']['Dell_G5MC']['BmcIp']
+        bmcmac = "00:00:00:00:00" #system['Oem']['Dell_G5MC']['BmcMac']
         node = {"nodeid": nodeid, "cpu": cpu,
                 "ram": ram, "storage": storage,
                 "nw": nw, "location": nodelocation,
                 "uuid": nodeuuid, "bmcip": bmcip, "bmcmac": bmcmac}
 
-
         # filter based on RAM, CPU, NETWORK..etc
         if 'ram' in filters:
-            filterPassed = (True if int(ram) >= int(filters['ram']) else False)
+            filterPassed = (True
+                            if int(ram) >= int(filters['ram'])
+                            else False)
 
         # filter based on RAM, CPU, NETWORK..etc
         if 'nw' in filters:
-            filterPassed = (True if int(nw) >= int(filters['nw']) else False)
+            filterPassed = (True
+                            if int(nw) >= int(filters['nw'])
+                            else False)
 
         # filter based on RAM, CPU, NETWORK..etc
         if 'storage' in filters:
-            filterPassed = (True if int(storage) >= int(filters['storage']) else False)
+            filterPassed = (True
+                            if int(storage) >= int(filters['storage'])
+                            else False)
 
-	
         if filterPassed:
             lst_nodes.append(node)
-        #LOG.info(str(node))
+        # LOG.info(str(node))
     return lst_nodes
 
 
@@ -280,20 +278,21 @@ def get_chassis_list():
 
     for clnk in chassis_lnk_lst:
         data = send_request(clnk)
+        LOG.info(data)
         if "Links" in data:
             contains = []
             containedby = {}
             computersystems = []
             linksdata = data["Links"]
-            if "Contains" in linksdata:
+            if "Contains" in linksdata and linksdata["Contains"]:
                 for c in linksdata["Contains"]:
                     contains.append(c['@odata.id'].split("/")[-1])
 
-            if "ContainedBy" in linksdata:
+            if "ContainedBy" in linksdata and linksdata["ContainedBy"]:
                 odata = linksdata["ContainedBy"]['@odata.id']
                 containedby = odata.split("/")[-1]
 
-            if "ComputerSystems" in linksdata:
+            if "ComputerSystems" in linksdata and linksdata["ComputerSystems"]:
                 for c in linksdata["ComputerSystems"]:
                     computersystems.append(c['@odata.id'])
 
@@ -324,7 +323,7 @@ def build_hierarchy_tree():
         containedby = d["ContainedBy"] if d["ContainedBy"] else "0"
         podmtree.add_node(d["ChassisID"], d, containedby)
         systems = d["ComputerSystems"]
-        for sys in systems:
-            sysname = sys.split("/")[-2] + ":" + sys.split("/")[-1]
-            podmtree.add_node(sys, {"name": sysname}, d["ChassisID"])
+        for system in systems:
+            sysname = system.split("/")[-2] + ":" + system.split("/")[-1]
+            podmtree.add_node(system, {"name": sysname}, d["ChassisID"])
     return podmtree

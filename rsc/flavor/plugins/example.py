@@ -12,16 +12,16 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import json
 from oslo_log import log as logging
-from plasma.flavor.generatorbase import generatorbase
+from rsc.flavor.generatorbase import generatorbase
 
 logger = logging.getLogger()
 
+
 class exampleGenerator(generatorbase):
     def __init__(self, nodes):
-      generatorbase.__init__(self, nodes)
-             
+        generatorbase.__init__(self, nodes)
+
     def generate(self):
-      logger.info("Example Flavor Generate")
-      return {"Error": "Example Flavor Generator- Not Yet Implemented"}
+        logger.info("Example Flavor Generate")
+        return {"Error": "Example Flavor Generator- Not Yet Implemented"}

@@ -1,7 +1,7 @@
 (_ROOT, _DEPTH, _BREADTH) = range(3)
 
 
-class Tree:
+class Tree(object):
 
     def __init__(self):
         self.__nodes = {}
@@ -11,8 +11,11 @@ class Tree:
         return self.__nodes
 
     def add_node(self, identifier, data={}, parent=None):
-        node = TreeNode(identifier, data)
-        self[identifier] = node
+        if identifier in self.nodes:
+            node = self[identifier] 
+        else:
+            node = TreeNode(identifier,data)
+            self[identifier] = node
 
         if parent is not None:
             self[parent].add_child(identifier)
@@ -21,11 +24,11 @@ class Tree:
 
     def display(self, identifier, depth=_ROOT):
         children = self[identifier].children
-        data = self[identifier].data
+        # data = self[identifier].data
         if depth == _ROOT:
             print("{0}".format(identifier))
         else:
-            print("\t"*depth, "{0}".format(identifier))
+            print("\t" * depth, "{0}".format(identifier))
 
         depth += 1
         for child in children:
@@ -42,10 +45,7 @@ class Tree:
         else:
             name = identifier
 
-        if depth == _ROOT:
-            htmlstr = "<li>" + name + "[" + identifier + "]</li>"
-        else:
-            htmlstr = "<li>" + name + "[" + identifier + "]</li>"
+        htmlstr = "<li>" + name + "[" + identifier + "]</li>"
 
         fileref.write(htmlstr)
         depth += 1
@@ -53,10 +53,10 @@ class Tree:
             self.processHTML(fileref, child, depth)  # recursive call
         fileref.write("</ul>")
 
-    def writeHTML(self, filename="chassisTree.html"):
+    def writeHTML(self, rootnodeid,  filename="chassisTree.html"):
         htmlfile = open(filename, 'w+')
         htmlfile.write("<html><body><h1>Tree</h1>")
-        self.processHTML(htmlfile, "0")
+        self.processHTML(htmlfile, rootnodeid)
         htmlfile.write("</body></html>")
         htmlfile.close()
 
@@ -92,7 +92,7 @@ class Tree:
 
 
 # Class represents Tree Node
-class TreeNode:
+class TreeNode(object):
     def __init__(self, identifier, data={}):
         self.__identifier = identifier
         self.__children = []

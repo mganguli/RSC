@@ -13,11 +13,14 @@
 #    under the License.
 
 
-from pecan import expose, route, rest, request
-from plasma.api.controllers.v1 import controller as v1controller
-from plasma.api.controllers import link
-from plasma.api.controllers import types
-from plasma.api.controllers import base
+from pecan import expose
+from pecan import request
+from pecan import route
+from rsc.api.controllers import base
+from rsc.api.controllers import link
+from rsc.api.controllers import types
+from rsc.api.controllers.v1 import controller as v1controller
+
 
 class Version(base.APIBase):
     """An API version representation."""
@@ -60,15 +63,16 @@ class Root(base.APIBase):
     @staticmethod
     def convert():
         root = Root()
-        root.name = "OpenStack Plasma API"
-        root.description = ("Plasma is an OpenStack project")
+        root.name = "OpenStack RSC API"
+        root.description = ("RSC is an OpenStack project")
         root.versions = [Version.convert('v1')]
         root.default_version = Version.convert('v1')
         return root
+
 
 class RootController(object):
     @expose('json')
     def index(self):
         return Root.convert()
 
-route(RootController, 'v1',  v1controller.V1Controller())
+route(RootController, 'v1', v1controller.V1Controller())

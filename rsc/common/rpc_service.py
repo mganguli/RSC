@@ -10,15 +10,15 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-"""Common RPC service and API tools for Plasma."""
+"""Common RPC service and API tools for RSC."""
 
 import eventlet
 from oslo_config import cfg
 import oslo_messaging as messaging
 from oslo_service import service
 
-from plasma.common import rpc
-from plasma.objects import base as objects_base
+from rsc.common import rpc
+from rsc.objects import base as objects_base
 
 eventlet.monkey_patch()
 
@@ -38,7 +38,7 @@ class Service(service.Service):
     def __init__(self, topic, server, handlers, binary):
         super(Service, self).__init__()
         serializer = rpc.RequestContextSerializer(
-            objects_base.PlasmaObjectSerializer())
+            objects_base.RSCObjectSerializer())
         transport = messaging.get_transport(cfg.CONF)
         # TODO(asalkeld) add support for version='x.y'
         target = messaging.Target(topic=topic, server=server)
@@ -66,7 +66,7 @@ class API(object):
     def __init__(self, transport=None, context=None, topic=None, server=None,
                  timeout=None):
         serializer = rpc.RequestContextSerializer(
-            objects_base.PlasmaObjectSerializer())
+            objects_base.RSCObjectSerializer())
         if transport is None:
             exmods = rpc.get_allowed_exmods()
             transport = messaging.get_transport(cfg.CONF,

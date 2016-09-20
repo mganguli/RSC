@@ -12,15 +12,12 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import pecan
-from pecan import expose, rest, request
-import oslo_messaging as messaging
 from oslo_config import cfg
 from oslo_log import log as logging
-from plasma.common import exceptions
-from plasma.common import rpc
-from plasma.common import context
-from plasma.controller import api as controller_api
+import pecan
+from pecan import expose
+from pecan import request
+from rsc.controller import api as controller_api
 
 CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
@@ -36,11 +33,12 @@ class StoragesController(object):
     def index(self):
         LOG.debug("GET /storages")
         rpcapi = controller_api.API(context=request.context)
+        LOG.debug(rpcapi)
         pecan.abort(501, "GET /storages is Not yet implemented")
 
     @expose(template='json')
     def get(self, storageid):
         LOG.debug("GET /storages" + storageid)
         rpcapi = controller_api.API(context=request.context)
+        LOG.debug(rpcapi)
         pecan.abort(501, "GET /storages/storage is Not yet implemented")
-

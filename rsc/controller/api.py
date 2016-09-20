@@ -14,10 +14,8 @@
 
 """controller API for interfacing with Other modules"""
 from oslo_config import cfg
-
-from plasma.common import rpc_service
-from plasma.controller import config
 from oslo_log import log as logging
+from rsc.common import rpc_service
 
 
 # The Backend API class serves as a AMQP client for communicating
@@ -30,7 +28,7 @@ LOG = logging.getLogger(__name__)
 class API(rpc_service.API):
     def __init__(self, transport=None, context=None, topic=None):
         if topic is None:
-            cfg.CONF.import_opt('topic', 'plasma.controller.config',
+            cfg.CONF.import_opt('topic', 'rsc.controller.config',
                                 group='controller')
         super(API, self).__init__(transport, context,
                                   topic=cfg.CONF.controller.topic)

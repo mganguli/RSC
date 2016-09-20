@@ -18,8 +18,8 @@ server = {
 
 # Pecan Application Configurations
 app = {
-    'root': 'plasma.controllers.root.RootController',
-    'modules': ['plasma'],
+    'root': 'rsc.controllers.root.RootController',
+    'modules': ['rsc'],
     'static_root': '%(confdir)s/../../public',
     'template_path': '%(confdir)s/../templates',
     'debug': True,

@@ -10,11 +10,10 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-import sys
 from oslo_config import cfg
 from oslo_log import log as logging
-
-from plasma.common import rpc
+from rsc.common import rpc
+import sys
 
 LOG = logging.getLogger(__name__)
 
@@ -32,24 +31,24 @@ common_opts = [
 ]
 
 api_opts = [
-     cfg.StrOpt('bind_host', default='0.0.0.0',
-                help=("The host IP to bind to")),
-     cfg.IntOpt('bind_port', default=8181,
-                help=("The port to bind to")),
-     cfg.IntOpt('api_workers', default=2,
-                help=("number of api workers"))
+    cfg.StrOpt('bind_host', default='0.0.0.0',
+               help=("The host IP to bind to")),
+    cfg.IntOpt('bind_port', default=8181,
+               help=("The port to bind to")),
+    cfg.IntOpt('api_workers', default=2,
+               help=("number of api workers"))
 ]
 
 
 def init(args, **kwargs):
     # Register the configuration options
-    api_conf_group = cfg.OptGroup(name='api', title='Plasma API options')
+    api_conf_group = cfg.OptGroup(name='api', title='RSC API options')
     cfg.CONF.register_group(api_conf_group)
     cfg.CONF.register_opts(api_opts, group=api_conf_group)
     cfg.CONF.register_opts(common_opts)
     logging.register_options(cfg.CONF)
 
-    cfg.CONF(args=args, project='plasma',
+    cfg.CONF(args=args, project='rsc',
              **kwargs)
 
     rpc.init(cfg.CONF)
@@ -57,7 +56,11 @@ def init(args, **kwargs):
 
 def setup_logging():
     """Sets up the logging options for a log with supplied name."""
-    product_name = "plasma"
+    product_name = "rsc"
     logging.setup(cfg.CONF, product_name)
     LOG.info("Logging enabled!")
     LOG.debug("command line: %s", " ".join(sys.argv))
+
+
+def list_opts():
+    yield None, common_opts

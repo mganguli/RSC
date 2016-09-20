@@ -1,6 +1,6 @@
-from unittest import TestCase
-from webtest import TestApp
-from plasma.tests import FunctionalTest
+from rsc.tests import FunctionalTest
+# from unittest import TestCase
+# from webtest import TestApp
 
 
 class TestRootController(FunctionalTest):

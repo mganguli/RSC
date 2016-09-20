@@ -12,10 +12,8 @@
 
 import logging
 import six
-
 from oslo_utils import strutils
-
-from plasma.common import exceptions as exception
+from rsc.common import exceptions as exception
 
 LOG = logging.getLogger(__name__)
 
@@ -65,7 +63,7 @@ class Integer(object):
             try:
                 value = int(value)
             except Exception:
-                LOG.exception(_LE('Failed to convert value to int'))
+                LOG.exception('Failed to convert value to int')
                 raise exception.InvalidValue(value=value, type=cls.type_name)
 
         if minimum is not None and value < minimum:
@@ -88,7 +86,7 @@ class Bool(object):
             try:
                 value = strutils.bool_from_string(value, strict=True)
             except Exception:
-                LOG.exception(_LE('Failed to convert value to bool'))
+                LOG.exception('Failed to convert value to bool')
                 raise exception.InvalidValue(value=value, type=cls.type_name)
 
         return value
@@ -108,7 +106,7 @@ class Custom(object):
             try:
                 value = self.user_class(**value)
             except Exception:
-                LOG.exception(_LE('Failed to validate received value'))
+                LOG.exception('Failed to validate received value')
                 raise exception.InvalidValue(value=value, type=self.type_name)
 
         return value
@@ -130,5 +128,5 @@ class List(object):
         try:
             return [self.type.validate(v) for v in value]
         except Exception:
-            LOG.exception(_LE('Failed to validate received value'))
+            LOG.exception('Failed to validate received value')
             raise exception.InvalidValue(value=value, type=self.type_name)

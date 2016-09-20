@@ -11,28 +11,28 @@
 #    limitations under the License.
 
 """
-Plasma base exception handling.
+RSC base exception handling.
 """
 import six
 
 from oslo_utils import excutils
 
 
-class PlasmaException(Exception):
-    """Base Plasma Exception.
-    """
+class RSCException(Exception):
+    """Base RSC Exception."""
+
     message = "An unknown exception occurred."
 
     def __init__(self, **kwargs):
         try:
-            super(PlasmaException, self).__init__(self.message % kwargs)
+            super(RSCException, self).__init__(self.message % kwargs)
             self.msg = self.message % kwargs
         except Exception:
             with excutils.save_and_reraise_exception() as ctxt:
                 if not self.use_fatal_exceptions():
                     ctxt.reraise = False
                     # at least get the core message out if something happened
-                    super(PlasmaException, self).__init__(self.message)
+                    super(RSCException, self).__init__(self.message)
 
     if six.PY2:
         def __unicode__(self):
@@ -42,38 +42,38 @@ class PlasmaException(Exception):
             return False
 
 
-class BadRequest(PlasmaException):
+class BadRequest(RSCException):
     message = 'Bad %(resource)s request'
 
 
-class NotImplemented(PlasmaException):
-    message = ("Not yet implemented in Plasma  %(func_name)s: ")
+class NotImplemented(RSCException):
+    message = ("Not yet implemented in RSC  %(func_name)s: ")
 
 
-class NotFound(PlasmaException):
+class NotFound(RSCException):
     message = ("URL not Found")
 
 
-class Conflict(PlasmaException):
+class Conflict(RSCException):
     pass
 
 
-class ServiceUnavailable(PlasmaException):
+class ServiceUnavailable(RSCException):
     message = "The service is unavailable"
 
 
-class ConnectionRefused(PlasmaException):
+class ConnectionRefused(RSCException):
     message = "Connection to the service endpoint is refused"
 
 
-class TimeOut(PlasmaException):
+class TimeOut(RSCException):
     message = "Timeout when connecting to OpenStack Service"
 
 
-class InternalError(PlasmaException):
+class InternalError(RSCException):
     message = "Error when performing operation"
 
 
-class InvalidInputError(PlasmaException):
+class InvalidInputError(RSCException):
     message = ("An invalid value was provided for %(opt_name)s: "
                "%(opt_value)s")

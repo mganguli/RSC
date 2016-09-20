@@ -13,17 +13,16 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+
+import json
+from oslo_config import cfg
+from oslo_log import log as logging
 import requests
 from requests.auth import HTTPBasicAuth
-import json
-import sys
-import traceback
-import os
-from oslo_log import log as logging
-from oslo_config import cfg
+
 
 LOG = logging.getLogger(__name__)
-cfg.CONF.import_group('undercloud', 'plasma.controller.config')
+cfg.CONF.import_group('undercloud', 'rsc.controller.config')
 
 
 def _send_request(url, method, headers, requestbody=None):
@@ -42,17 +41,27 @@ def _send_request(url, method, headers, requestbody=None):
 
 
 def _get_servicecatalogue_endpoint(keystonejson, servicename):
-    """This function is to get the particular endpoint from the
-       list of endpoints returned fro keystone"""
+    """Fetch particular endpoint from Keystone.
+
+       This function is to get the particular endpoint from the
+       list of endpoints returned fro keystone.
+
+    """
+
     for d in keystonejson["access"]["serviceCatalog"]:
         if(d["name"] == servicename):
             return d["endpoints"][0]["publicURL"]
 
 
 def _get_token_and_url(nameofendpoint):
-    """ This function get new token and associated endpoint.
+    """Fetch token from the endpoint
+
+    This function get new token and associated endpoint.
     name of endpoint carries the name of the service whose
-    endpoint need to be found"""
+    endpoint need to be found.
+
+    """
+
     url = cfg.CONF.undercloud.os_admin_url + "/tokens"
     data = {"auth":
             {"tenantName": cfg.CONF.undercloud.os_tenant,

@@ -10,12 +10,13 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-from pecan import make_app, configuration
 from oslo_config import cfg
-from oslo_service import service
 from oslo_middleware import request_id
-from plasma.common import exceptions as p_excp
-from plasma.api import hooks
+from oslo_service import service
+from pecan import configuration
+from pecan import make_app
+from rsc.api import hooks
+from rsc.common import exceptions as p_excp
 
 
 def setup_app(*args, **kwargs):
@@ -25,8 +26,8 @@ def setup_app(*args, **kwargs):
             'port': cfg.CONF.api.bind_host
         },
         'app': {
-            'root': 'plasma.api.controllers.root.RootController',
-            'modules': ['plasma.api'],
+            'root': 'rsc.api.controllers.root.RootController',
+            'modules': ['rsc.api'],
             'hooks': [hooks.RPCHook()],
             'errors': {
                 400: '/error',

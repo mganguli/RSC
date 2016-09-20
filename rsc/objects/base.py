@@ -12,7 +12,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-"""Plasma common internal object model"""
+"""RSC common internal object model"""
 
 from oslo_versionedobjects import base as ovoo_base
 from oslo_versionedobjects import fields as ovoo_fields
@@ -22,11 +22,11 @@ remotable_classmethod = ovoo_base.remotable_classmethod
 remotable = ovoo_base.remotable
 
 
-class PlasmaObjectRegistry(ovoo_base.VersionedObjectRegistry):
+class RSCObjectRegistry(ovoo_base.VersionedObjectRegistry):
     pass
 
 
-class PlasmaObject(ovoo_base.VersionedObject):
+class RSCObject(ovoo_base.VersionedObject):
     """Base class and object factory.
 
     This forms the base of all objects that can be remoted or instantiated
@@ -35,7 +35,7 @@ class PlasmaObject(ovoo_base.VersionedObject):
     necessary "get" classmethod routines as well as "save" object methods
     as appropriate.
     """
-    OBJ_PROJECT_NAMESPACE = 'Plasma'
+    OBJ_PROJECT_NAMESPACE = 'RSC'
 
     def as_dict(self):
         return {k: getattr(self, k)
@@ -43,11 +43,11 @@ class PlasmaObject(ovoo_base.VersionedObject):
                 if self.obj_attr_is_set(k)}
 
 
-class PlasmaObjectDictCompat(ovoo_base.VersionedObjectDictCompat):
+class RSCObjectDictCompat(ovoo_base.VersionedObjectDictCompat):
     pass
 
 
-class PlasmaPersistentObject(object):
+class RSCPersistentObject(object):
     """Mixin class for Persistent objects.
 
     This adds the fields that we use in common for all persistent objects.
@@ -58,6 +58,6 @@ class PlasmaPersistentObject(object):
     }
 
 
-class PlasmaObjectSerializer(ovoo_base.VersionedObjectSerializer):
+class RSCObjectSerializer(ovoo_base.VersionedObjectSerializer):
     # Base class to use for object hydration
-    OBJ_BASE_CLASS = PlasmaObject
+    OBJ_BASE_CLASS = RSCObject

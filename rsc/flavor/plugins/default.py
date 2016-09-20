@@ -15,7 +15,7 @@
 import json
 import re
 from oslo_log import log as logging
-from plasma.flavor.generatorbase import generatorbase
+from rsc.flavor.generatorbase import generatorbase
 
 LOG = logging.getLogger()
 
@@ -29,16 +29,15 @@ class defaultGenerator(generatorbase):
     def generate(self):
       LOG.info("Default Generator")
       for node in self.nodes:
-	LOG.info("Node ID " + node['nodeid'])
+        LOG.info("Node ID " + node['nodeid'])
         location = node['location']
-#	Systems:Rack1-Block1-Sled2-Node1_Sled:Rack1-Block1-Sled2_Enclosure:Rack1-Block1_Rack:Rack1_
+        #Systems:Rack1-Block1-Sled2-Node1_Sled:Rack1-Block1-Sled2_Enclosure:Rack1-Block1_Rack:Rack1_
         location_lst = location.split("_");
         location_lst = list(filter(None, location_lst))
         extraspecs = { l[0] : l[1] for l in (l.split(":") for l in location_lst) }
-
         name = self.prepend_name + location
-	return {
-		self._flavor_template("L_" + name, node['ram'] , node['cpu']["count"], node['storage'], extraspecs),
-		self._flavor_template("M_" + name, int(node['ram'])/2 , int(node['cpu']["count"])/2 , int(node['storage'])/2, extraspecs),
-		self._flavor_template("S_" + name, int(node['ram'])/4 , int(node['cpu']["count"])/4 , int(node['storage'])/4, extraspecs)
-	}
+      return {
+        self._flavor_template("L_" + name, node['ram'] , node['cpu']["count"], node['storage'], extraspecs),
+        self._flavor_template("M_" + name, int(node['ram'])/2 , int(node['cpu']["count"])/2 , int(node['storage'])/2, extraspecs),
+        self._flavor_template("S_" + name, int(node['ram'])/4 , int(node['cpu']["count"])/4 , int(node['storage'])/4, extraspecs)
+	  }

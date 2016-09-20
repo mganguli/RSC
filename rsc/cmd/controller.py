@@ -14,21 +14,19 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-"""Starter script for the Plasma controller service."""
+"""Starter script for the RSC controller service."""
 
 import os
-import sys
-import uuid
 from oslo_config import cfg
 from oslo_log import log as logging
-from oslo_reports import guru_meditation_report as gmr
 from oslo_service import service
-
-from plasma.common import rpc_service
-from plasma.controller import config as controller_config
-from plasma.controller.handlers import flavor_controller
-from plasma.controller.handlers import node_controller
-# from plasma import version
+from rsc.common import rpc_service
+from rsc.controller import config as controller_config
+from rsc.controller.handlers import flavor_controller
+from rsc.controller.handlers import node_controller
+# from rsc import version
+import sys
+import uuid
 
 LOG = logging.getLogger(__name__)
 
@@ -36,10 +34,10 @@ LOG = logging.getLogger(__name__)
 def main():
     controller_config.init(sys.argv[1:])
     controller_config.setup_logging()
-    LOG.info(('Starting plasma-controller in PID %s'), os.getpid())
+    LOG.info(('Starting rsc-controller in PID %s'), os.getpid())
     LOG.debug("Configuration:")
 #   cfg.CONF.import_opt('topic',
-#                       'plasma.controller.config',
+#                       'rsc.controller.config',
 #                        group='controller')
 
     controller_id = uuid.uuid4()
@@ -50,7 +48,7 @@ def main():
 
     server = rpc_service.Service.create(cfg.CONF.controller.topic,
                                         controller_id, endpoints,
-                                        binary='plasma-controller')
+                                        binary='rsc-controller')
     launcher = service.launch(cfg.CONF, server)
     launcher.wait()
 

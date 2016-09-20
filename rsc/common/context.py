@@ -10,7 +10,6 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-from pecan import request
 from oslo_context import context as oslo_ctx
 
 

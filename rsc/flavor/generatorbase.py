@@ -16,7 +16,7 @@ import json
 import uuid
 
 
-class generatorbase:
+class generatorbase(object):
     def __init__(self, nodes):
         self.nodes = nodes
         self.prepend_name = 'irsd-'

@@ -11,11 +11,15 @@
 #    limitations under the License.
 
 
-import oslo_messaging as messaging
-import plasma.common.exceptions
-from oslo_serialization import jsonutils
-from plasma.common import context
+# import oslo_messaging as messaging
+# from oslo_serialization import jsonutils
+# from rsc.common import rsccontext
 from oslo_config import cfg
+import oslo_messaging as messaging
+from oslo_serialization import jsonutils
+from rsc.common import context as rsc_ctx
+import rsc.common.exceptions
+
 
 __all__ = [
     'init',
@@ -35,7 +39,7 @@ TRANSPORT = None
 NOTIFIER = None
 
 ALLOWED_EXMODS = [
-    plasma.common.exceptions.__name__,
+    rsc.common.exceptions.__name__,
 ]
 EXTRA_EXMODS = []
 
@@ -101,7 +105,8 @@ class RequestContextSerializer(messaging.Serializer):
             return context.to_dict()
 
     def deserialize_context(self, context):
-        return plasma.common.context.Context.from_dict(context)
+#        return rsc.common.context.Context.from_dict(context)
+        return rsc_ctx.Context.from_dict(context)
 
 
 def get_transport_url(url_str=None):
