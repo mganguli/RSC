@@ -64,3 +64,7 @@ etc/magnum/magnum.conf.sample
 
 # Files created by releasenotes build
 releasenotes/build
+
+# UI Node files
+rsc/ui/node_modules
+rsc/ui/npm-debug.log
