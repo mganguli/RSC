@@ -39,7 +39,7 @@ const ComposedNodeList = React.createClass({
 
   render() {
     return (
-      <NodeList onShowDetail={this.props.onShowDetail} items={this.state.composedNodes} header="COMPOSED NODES" />
+      <NodeList updateList={this.getComposedNodes} onShowDetail={this.props.onShowDetail} items={this.state.composedNodes} header="COMPOSED NODES" />
     );
   }
 });

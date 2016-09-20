@@ -16,6 +16,9 @@ const NodeList = React.createClass({
       },
       data: JSON.stringify(config.nodeConfig),
       dataType: 'text',
+      success: function(resp) {
+        this.props.updateList();
+      }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
       }.bind(this)
@@ -31,6 +34,12 @@ const NodeList = React.createClass({
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
+      success: function(resp) {
+        this.props.updateList();
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(url, status, err.toString());
+      }.bind(this)
     });
   },
 
