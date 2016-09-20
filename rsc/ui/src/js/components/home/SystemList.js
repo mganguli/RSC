@@ -1,5 +1,5 @@
 import React from "react";
-import ItemList from "./ItemList";
+import ResourceList from "./ResourceList";
 
 var config = require('../../config.js');
 var util = require('../../util.js');
@@ -38,7 +38,7 @@ const SystemList = React.createClass({
 
   render() {
     return (
-      <ItemList onShowDetail={this.props.onShowDetail} items={this.state.systems} header="SYSTEMS" />
+      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.systems} header="SYSTEMS" />
     );
   }
 });

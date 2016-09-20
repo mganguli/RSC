@@ -6,10 +6,7 @@ const RackDetail = React.createClass({
     var rack = this.props.rack;
     return (
       <div>
-        Rack Name: {rack.Name}<br/>
-        Description: {rack.Description}<br/>
-        Manufacturer: {rack.Manufacturer}<br/>
-        Serial Number: {rack.SerialNumber}<br/>
+        {JSON.stringify(rack)}
       </div>
     );
   }

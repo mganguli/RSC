@@ -1,50 +1,69 @@
-===============================
-plasma
-===============================
+=======================
+Openstack RSC Project
+=======================
 
-Openstack Plasma Project
+Rack Scale Controller (RSC) is a service for lifecycle management of pooled bare-metal hardware infrastructure such as Intel(R) Rack Scale architecture which uses Redfish(TM) as one of the management protocols.
+    
+:Free software: Apache license
+:Wiki: https://wiki.openstack.org/wiki/Rsc
+:Source: http://git.openstack.org/cgit/openstack/rsc
+:Bugs: http://bugs.launchpad.net/plasma
 
-A Controller service for lifecycle management of Pooled bare-metal hardware
-infrastructure like Rack Scale architecture which uses Redfish 
-as one of the management protocols.
+    
+===========================
+Download and Installation
+===========================
 
-* Free software: Apache license
-* Documentation: http://docs.openstack.org/developer/plasma
-* Source: http://git.openstack.org/cgit/openstack/plasma
-* Bugs: http://bugs.launchpad.net/plasma
+The following steps capture how to install rsc. All installation steps require super user permissions.
+
+********************
+RSC installation
+********************
+ 1. Clone the RSC code from git repo. 
+ 2. Install all necessary software pre-requisites using the pip requirements file. 
+
+    ``$ pip install -r requirements.txt``
+ 3. Execute the setup.py file to install the RSC package. 
+
+    ``$ python setup.py install``
+ 
+ 4. Copy the rsc-api.conf, plasma-controller.conf from rsc/doc/source/samples directory to /etc/rsc/. 
+ 5. Edit the rsc-api.conf, rsc-controller.conf to set log file and config file locations
+ 6. Start api and controller services
+    
+    ``$ service rsc-api start`` 
+
+    ``$ service rsc-controller start``
 
 
-plasma-api
-##########
-A pecan based application to process plasma REST requests. plasma-api 
-communicates through plasma-controller through AMQP.
-
-plasma-controller
-#################
-Controller implements all the handlers for Plasma-api. It reads requests from
-the AMQP queue, process it and send the reponse back to the caller.
+****************
+GUI installation
+****************
+Please refer to the installation steps in the ui/README file. 
 
 
-Installation
-------------
+**********
+Components
+**********
 
-* Create virtualenv for plasma project
-* Clone the plasma code from git repo
-* pip install the dependency packages from requirements.txt
-      $ pip install -r requirements.txt
-* Copy the plasma-api.conf, plasma-controller.conf from 
-  plasma/doc/source/samples directory to /etc/init/
-* Configure the plasma-api.conf, plasma-controller.conf to set
-  log file and config file locations
-* Configure plasma/etc/plasma.conf to set Plasma environment.
-* Start plasma-api and plasma-controller
-      $ service plasma-api start
-      $ service plasma-controller start
+RSC follows the typical OpenStack project setup. The components are listed below:
 
-Features
+rsc-api
+-----------
+A pecan based daemon to expose RSC REST APIs. The api service communicates to the controller through AMQP.
+
+rsc-controller
+--------------
+The controller implements all the handlers for Plasma-api. It reads requests from the AMQP queue, process it and send the reponse back to the caller.
+
+rsc-ui
 --------
+rsc-ui provides a GUI interface to invoke RSC APIs. 
 
-* TODO
+==========
+Features
+==========
+Please refer the RSC blueprints for supported and in-the-pipeline features.
+``https://blueprints.launchpad.net/plasma``
 
-  Please refer the blueprints 
-      https://blueprints.launchpad.net/plasma
+

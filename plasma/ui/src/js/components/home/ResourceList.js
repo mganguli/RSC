@@ -2,7 +2,7 @@ import React from "react";
 
 var util = require('../../util.js');
 
-const ItemList = React.createClass({
+const ResourceList = React.createClass({
 
   renderList: function() {
     return this.props.items.map((item, i) =>
@@ -25,6 +25,6 @@ const ItemList = React.createClass({
   },
 });
 
-ItemList.defaultProps = { items: [], header: ""};
+ResourceList.defaultProps = { items: [], header: ""};
 
-export default ItemList;
+export default ResourceList;

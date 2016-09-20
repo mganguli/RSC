@@ -1,5 +1,5 @@
 import React from "react";
-import ItemList from "./ItemList";
+import ResourceList from "./ResourceList";
 
 var config = require('../../config.js');
 var util = require('../../util.js');
@@ -38,7 +38,7 @@ const PodList = React.createClass({
 
   render() {
     return (
-      <ItemList onShowDetail={this.props.onShowDetail} items={this.state.pods} header="PODS" />
+      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.pods} header="PODS" />
     );
   }
 });
