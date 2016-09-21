@@ -47,7 +47,7 @@ const NodeList = React.createClass({
     return this.props.items.map((item, i) =>
       <div class="item" key={i}>
         {item.Name}
-        <input type="button" class="detail-button" onClick={() => this.props.onShowDetail(item, this.props.header)} value="Show" />
+        <input type="button" class="detail-button" onClick={() => this.props.onShowDetail(item)} value="Show" />
         <input type="button" class="detail-button" onClick={() => this.delete(item.Id)} value="Delete" />
         <br />
         {item.Description}

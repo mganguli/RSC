@@ -1,9 +1,34 @@
 import React from "react";
-
+import DetailDisplay from "./home/DetailDisplay";
 import Home from "./home/Home";
 
-export default class Layout extends React.Component {
-  render() {
+const Layout = React.createClass({
+
+  getInitialState: function() {
+    return {
+      homeDisplay: "inline-block",
+      detailDisplay: "none",
+      detailData: ""
+    };
+  },
+
+  displayHome: function() {
+    this.setState({
+      homeDisplay: "inline-block",
+      detailDisplay: "none",
+      detailData: ""
+    });
+  },
+
+  displayDetail: function(item) {
+    this.setState({
+      homeDisplay: "none",
+      detailDisplay: "inline-block",
+      detailData: JSON.stringify(item)
+    });
+  },
+
+  render: function() {
     return (
       <div class="container">
         <nav class="navbar navbar-default">
@@ -42,7 +67,8 @@ export default class Layout extends React.Component {
           </div>
         </nav>
 
-        <Home />
+        <Home display={this.state.homeDisplay} onShowDetail={this.displayDetail} />
+        <DetailDisplay display={this.state.detailDisplay} data={this.state.detailData} onHideDetail={this.displayHome} />
 
         <footer class="footer navbar-fixed-bottom">
           <div class="container">
@@ -50,8 +76,8 @@ export default class Layout extends React.Component {
           </div>
         </footer>
       </div>
-
-
     );
   }
-}
+});
+
+export default Layout;
