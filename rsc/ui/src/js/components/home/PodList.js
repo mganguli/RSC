@@ -12,6 +12,7 @@ const PodList = React.createClass({
 
   componentWillMount() {
     this.getPods();
+    setInterval(this.getPods, 2000);
   },
 
   getPods() {
