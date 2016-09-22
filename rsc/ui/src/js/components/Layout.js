@@ -24,7 +24,7 @@ const Layout = React.createClass({
     this.setState({
       homeDisplay: "none",
       detailDisplay: "inline-block",
-      detailData: JSON.stringify(item)
+      detailData: JSON.stringify(item, null, "\t")
     });
   },
 
