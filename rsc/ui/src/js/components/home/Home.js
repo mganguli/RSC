@@ -4,7 +4,31 @@ import RackList from "./RackList";
 import SystemList from "./SystemList";
 import ComposedNodeList from "./ComposedNodeList";
 
+var config = require('../../config.js');
+
 const Home = React.createClass({
+
+  configCompose: function() {
+    /* This is a temporary function that will compose a node based on the JSON value
+     * of the nodeConfig variable in config.js.
+     *
+     * TODO(ntpttr): Remove this once the compose menu is fully flushed out.
+     */
+    var url = config.url + '/redfish/v1/Nodes/Actions/Allocate';
+    $.ajax({
+      url: url,
+      type: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      data: JSON.stringify(config.nodeConfig),
+      dataType: 'text',
+      error: function(xhr, status, err) {
+        console.error(url, status, err.toString());
+      }.bind(this)
+    });
+  },
 
   render: function() {
     return (
@@ -13,7 +37,8 @@ const Home = React.createClass({
           <h2>Welcome to RSD Details</h2>
           <p>This is a brief overview of all kinds of resources in this environment. See the <a href="#">User Guide</a> for more information on how to configure them.</p>
           <p>
-            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Configure &raquo;</a>
+            <input type="button" class="btn btn-lg btn-primary" style={{marginRight:'20px'}} onClick={() => this.props.onShowCompose()} value="Compose Node" />
+            <input type="button" class="btn btn-lg btn-primary" onClick={() => this.configCompose()} value="Compose From Config File" />
           </p>
         </div>
 

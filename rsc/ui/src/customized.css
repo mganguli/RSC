@@ -7,6 +7,9 @@ body {
   padding-top: 50px;
 }
 
+th, td {
+    padding: 10px;
+}
 
 /*
  * Global add-ons
@@ -54,9 +57,22 @@ hr.separator {
   padding: 6px 18px;
   margin-right: 6px;
   text-align: center;
-  display: inline-block;
+  display: block;
   border-radius: 4px;
   float: right;
+}
+
+.compose-button {
+  background-color: #428bca;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+  border-radius: 4px;
+  position: relative;
+  float: left;
 }
 
 .details {
