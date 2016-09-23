@@ -5,26 +5,6 @@ var util = require('../../util.js');
 
 const NodeList = React.createClass({
 
-  compose() {
-    var url = config.url + '/redfish/v1/Nodes/Actions/Allocate';
-    $.ajax({
-      url: url,
-      type: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      data: JSON.stringify(config.nodeConfig),
-      dataType: 'text',
-      success: function(resp) {
-        this.props.updateList();
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
-  },
-
   delete(nodeId) {
     var url = config.url + '/redfish/v1/Nodes/' + nodeId;
     $.ajax({
@@ -60,7 +40,6 @@ const NodeList = React.createClass({
     return (
       <div>
         {this.renderList()}
-        <input type="button" class="detail-button" onClick={() => this.compose()} value="Compose Node" />
       </div>
     );
   },

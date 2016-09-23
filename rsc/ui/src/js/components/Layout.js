@@ -1,4 +1,5 @@
 import React from "react";
+import ComposeDisplay from "./home/ComposeDisplay";
 import DetailDisplay from "./home/DetailDisplay";
 import Home from "./home/Home";
 
@@ -8,6 +9,7 @@ const Layout = React.createClass({
     return {
       homeDisplay: "inline-block",
       detailDisplay: "none",
+      composeDisplay: "none",
       detailData: ""
     };
   },
@@ -16,6 +18,7 @@ const Layout = React.createClass({
     this.setState({
       homeDisplay: "inline-block",
       detailDisplay: "none",
+      composeDisplay: "none",
       detailData: ""
     });
   },
@@ -24,7 +27,17 @@ const Layout = React.createClass({
     this.setState({
       homeDisplay: "none",
       detailDisplay: "inline-block",
-      detailData: JSON.stringify(item)
+      composeDisplay: "none",
+      detailData: JSON.stringify(item, null, "\t")
+    });
+  },
+
+  displayCompose: function() {
+    this.setState({
+      homeDisplay: "none",
+      detailDisplay: "none",
+      composeDisplay: "inline-block",
+      detailData: ""
     });
   },
 
@@ -67,8 +80,9 @@ const Layout = React.createClass({
           </div>
         </nav>
 
-        <Home display={this.state.homeDisplay} onShowDetail={this.displayDetail} />
+        <Home display={this.state.homeDisplay} onShowDetail={this.displayDetail} onShowCompose={this.displayCompose} />
         <DetailDisplay display={this.state.detailDisplay} data={this.state.detailData} onHideDetail={this.displayHome} />
+        <ComposeDisplay display={this.state.composeDisplay} onHideCompose={this.displayHome} />
 
         <footer class="footer navbar-fixed-bottom">
           <div class="container">
