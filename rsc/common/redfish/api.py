@@ -189,7 +189,7 @@ def node_cpu_details(nodeurl):
 def node_ram_details(nodeurl):
     # this extracts the RAM and returns as dictionary
     resp = send_request(nodeurl)
-    respbody = resp.json()
+    respjson = resp.json()
     ram = extract_val(respjson, "MemorySummary/TotalSystemMemoryGiB")
     LOG.debug(" Total Ram for node %s : %d " % (nodeurl, ram))
     return str(ram)
@@ -211,7 +211,7 @@ def node_storage_details(nodeurl):
     for lnk in hddlist:
         resp = send_request(lnk)
         respbody = resp.json()
-        hdds = extract_val(resp, "Devices")
+        hdds = extract_val(respbody, "Devices")
         for sd in hdds:
             if "CapacityBytes" in sd:
                 if sd["CapacityBytes"] is not None:
