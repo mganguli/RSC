@@ -18,7 +18,7 @@ import pecan
 from pecan import expose
 from pecan import request
 from pecan.rest import RestController
-from RSC.controller import api as controller_api
+from rsc.controller import api as controller_api
 
 CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
