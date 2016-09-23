@@ -11,6 +11,11 @@ auth_strategy=noauth
 # permissions to write to this file!
 log_file = rsc.log
 
+
+log_dir=/var/log/rsc
+rpc_response_timeout = 300
+
+
 [api]
 #address to bind the server to
 bind_host = 0.0.0.0
@@ -26,9 +31,9 @@ rabbit_password = rsc
 
 [podm]
 #url=http://10.223.197.204
-url=http://10.223.197.192:8080
-user=adminuser
-password=adminpassword
+url=http://<ip address>
+user=<user>
+password=<password>
 
 [conductor]
 #topic=rsc-conductor
