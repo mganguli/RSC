@@ -16,8 +16,9 @@
 import json
 from oslo_config import cfg
 from oslo_log import log as logging
+import requests
+from requests.auth import HTTPBasicAuth
 from rsc.common.redfish import tree
-import urllib2
 
 LOG = logging.getLogger(__name__)
 cfg.CONF.import_group('podm', 'rsc.common.redfish.config')
@@ -33,18 +34,16 @@ def get_rfs_url(serviceext):
         return cfg.CONF.podm.url + REDFISH_BASE_EXT + serviceext + INDEX
 
 
-def send_request(resource):
-    jsonContent = ''
+def send_request(resource, method="GET",**kwargs):
+    # The verify=false param in the request should be removed eventually
     url = get_rfs_url(resource)
-    user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
-    headers = {'User-Agent': user_agent,
-               'Authorization': 'Basic YWRtaW46YWRtaW4='}
-    req = urllib2.Request(url, None, headers)
-    LOG.debug(url)
-    response = urllib2.urlopen(req)
-    jsonContent = response.read()
-    # LOG.debug(jsonContent)
-    return json.loads(jsonContent)
+    httpuser = cfg.CONF.podm.user
+    httppwd = cfg.CONF.podm.password 
+    try:
+        resp = requests.request(method, url, verify=False, auth=HTTPBasicAuth(httpuser, httppwd), **kwargs)    
+    except requests.exceptions.RequestException as e:
+        LOG.error(e)
+    return resp
 
 
 def filter_chassis(jsonContent, filterCondition):
@@ -55,8 +54,8 @@ def filter_chassis(jsonContent, filterCondition):
     # count = parsed['Members@odata.count']
     for member in members:
         resource = member['@odata.id']
-        memberJson = send_request(resource)
-        memberJsonObj = json.loads(memberJson)
+        resp = send_request(resource)
+        memberJsonObj = json.loads(resp.json())
         chassisType = memberJsonObj['ChassisType']
         if chassisType == filterCondition:
             returnMembers.append(member)
@@ -98,7 +97,8 @@ def get_details(source):
     members = source['Members']
     for member in members:
         resource = member['@odata.id']
-        memberJson = send_request(resource)
+        resp = send_request(resource)
+        memberJson = resp.json()
         memberJsonObj = json.loads(memberJson)
         returnJSONObj[resource] = memberJsonObj
     return returnJSONObj
@@ -110,7 +110,8 @@ def systemdetails():
     members = parsed['Members']
     for member in members:
         resource = member['@odata.id']
-        memberJsonContent = send_request(resource)
+        resp = send_request(resource)
+        memberJsonContent = resp.json()
         memberJSONObj = json.loads(memberJsonContent)
         returnJSONObj[resource] = memberJSONObj
     return(json.dumps(returnJSONObj))
@@ -122,7 +123,8 @@ def nodedetails():
     members = parsed['Members']
     for member in members:
         resource = member['@odata.id']
-        memberJSONObj = send_request(resource)
+        resp = send_request(resource)
+        memberJSONObj = resp.json()
         returnJSONObj[resource] = memberJSONObj
     return(json.dumps(returnJSONObj))
 
@@ -155,7 +157,8 @@ def pods():
 
 def urls2list(url):
     # This will extract the url values from @odata.id inside Members
-    respdata = send_request(url)
+    resp = send_request(url)
+    respdata = resp.json()
     return [u['@odata.id'] for u in respdata['Members']]
 
 
@@ -173,7 +176,8 @@ def node_cpu_details(nodeurl):
     cpulist = urls2list(nodeurl + '/Processors')
     for lnk in cpulist:
         LOG.info("Processing CPU %s" % lnk)
-        respdata = send_request(lnk)
+        resp = send_request(lnk)
+        respdata = resp.json()
         cpucnt += extract_val(respdata, "TotalCores")
         cpuarch = extract_val(respdata, "InstructionSet")
         cpumodel = extract_val(respdata, "Model")
@@ -185,7 +189,8 @@ def node_cpu_details(nodeurl):
 def node_ram_details(nodeurl):
     # this extracts the RAM and returns as dictionary
     resp = send_request(nodeurl)
-    ram = extract_val(resp, "MemorySummary/TotalSystemMemoryGiB")
+    respbody = resp.json()
+    ram = extract_val(respjson, "MemorySummary/TotalSystemMemoryGiB")
     LOG.debug(" Total Ram for node %s : %d " % (nodeurl, ram))
     return str(ram)
 
@@ -193,7 +198,8 @@ def node_ram_details(nodeurl):
 def node_nw_details(nodeurl):
     # this extracts the total nw interfaces and returns as a string
     resp = send_request(nodeurl + "/EthernetInterfaces")
-    nwi = extract_val(resp, "Members@odata.count")
+    respbody = resp.json()
+    nwi = extract_val(respbody, "Members@odata.count")
     LOG.debug(" Total NW for node %s : %d " % (nodeurl, nwi))
     return str(nwi)
 
@@ -204,6 +210,7 @@ def node_storage_details(nodeurl):
     hddlist = urls2list(nodeurl + "/SimpleStorage")
     for lnk in hddlist:
         resp = send_request(lnk)
+        respbody = resp.json()
         hdds = extract_val(resp, "Devices")
         for sd in hdds:
             if "CapacityBytes" in sd:
@@ -225,7 +232,8 @@ def systems_list(count=None, filters={}):
 
     for lnk in systemurllist[:count]:
         filterPassed = True
-        system = send_request(lnk)
+        resp = send_request(lnk)
+        system = resp.json()
 
         # this below code need to be changed when proper query mechanism
         # is implemented
@@ -277,7 +285,8 @@ def get_chassis_list():
     lst_chassis = []
 
     for clnk in chassis_lnk_lst:
-        data = send_request(clnk)
+        resp = send_request(clnk)
+        data = resp.json()
         LOG.info(data)
         if "Links" in data:
             contains = []
@@ -308,7 +317,8 @@ def get_chassis_list():
 
 
 def get_nodebyid(nodeid):
-    return json.dumps(send_request("Systems/" + nodeid))
+    resp = send_request("Systems/" + nodeid)
+    return resp.json()
 
 
 def build_hierarchy_tree():
@@ -327,3 +337,18 @@ def build_hierarchy_tree():
             sysname = system.split("/")[-2] + ":" + system.split("/")[-1]
             podmtree.add_node(system, {"name": sysname}, d["ChassisID"])
     return podmtree
+
+def compose_node(criteria={}):
+    #node comosition
+    composeurl = "Nodes/Actions/Allocate" 
+    reqbody = None if not criteria else criteria
+    headers = {'Content-type': 'application/json'}
+    if not criteria:
+        resp = send_request(composeurl, "POST", headers = headers) 
+    else:
+        resp = send_request(composeurl, "POST", json=criteria, headers = headers)
+    LOG.info(resp.headers)
+    LOG.info(resp.text)
+    LOG.info(resp.status_code)
+    composednode = resp.headers['Location']
+    return { "node" : composednode }
