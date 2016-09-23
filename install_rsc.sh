@@ -5,7 +5,8 @@
 #date            :21-09-2016
 #version         :0.1    
 #usage		 :bash mkscript.sh
-#notes           :This script is needed still rsc is packaged in to .deb/.rpm 
+#notes           :Run this script as sudo user and not as root.
+#                 This script is needed still rsc is packaged in to .deb/.rpm 
 #==============================================================================
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
