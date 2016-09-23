@@ -48,62 +48,11 @@ class Handler(object):
     def compose_nodes(self, context, criteria):
         """Chassis details could also be fetched and inserted"""
 
-        nodes_to_compose = int(criteria["nodes"])  # no of nodes to compose
-        systems = rfsapi.systems_list(nodes_to_compose, criteria["filter"])
-        uci = osapi.get_undercloud_images()
-        for system in systems:
-            nodeprofile = 'controller' if system['ram'] < 20 else 'compute'
-            # This Above simple logic needs to changed. IT IS FOR DEMO PURPOSE
-            # ONLY
-            nodesbody = {"driver": "pxe_ipmitool",
-                          "uuid": system['uuid'],
-                          "driver_info":{
-                              "ipmi_address": system['bmcip'],
-                              "ipmi_username":"intel",
-                              "ipmi_password":"intel",
-                              "deploy_kernel": uci["deploy_kernel"],
-                              "deploy_ramdisk": uci["deploy_ramdisk"]},
-                          "name": nodeprofile,
-                          "instance_info":{
-                              "ramdisk": uci["ramdisk"],
-                              "kernel": uci["kernel"],
-                              "image_source": uci["image_source"]}}
-            extraparam = {"mac": [system['bmcmac']]}
-
-            node_uuid = nodesbody['uuid']
-
-            # get auth token from keystone
-            tokenid, ironibasecurl = osapi._get_token_and_url("ironic")
-
-            # create nodes by fetching endpoint from keystone response json
-            ironicurl = ironibasecurl + "/v1/nodes"
-
-            # send create ironic node request using token obtained
-            headers = {'content-type': 'application/json',
-                     'X-Auth-Token': tokenid,
-                     'X-OpenStack-Ironic-API-Version': '1.9'}
-            LOG.debug("Ironic URL " + ironicurl)
-            resp = requests.post(ironicurl, headers=headers,
-                                 data=json.dumps(nodesbody))
-            LOG.debug("Ironic upload status %d " % resp.status_code)
-            LOG.debug("Ironic Upload" + str(resp.status_code) + resp.text)
-
-            # set state. Default is 'available' but it should be 'manage'
-            ironicurl = ironicurl + "/" + node_uuid + "/states/provision"
-            resp = requests.put(ironicurl, headers=headers,
-                               data=json.dumps({"target": "manage"}))
-            LOG.debug("Set Manage State" + str(resp.status_code))
-
-            # set mac address
-            portsurl = ironibasecurl + "/v1/ports"
-            macs = extraparam['mac']
-            for m in macs:
-               portbody = {"node_uuid": node_uuid, "address": m}
-               resp = requests.post(portsurl, headers=headers,
-                                    data=json.dumps(portbody))
-               LOG.debug("Add ports " + m + " " + str(resp.status_code))
-
-        return {"msg": "Compose Initiated"}
+        # no of nodes to compose
+        nodes_to_compose = int(criteria["nodes"]) if "nodes" in criteria else 1
+        node_criteria = criteria["filter"] if "filter" in criteria else {}
+        #no of node is not currently implemented
+        return rfsapi.compose_node(node_criteria)
 
     def list_node_storages(self, context, data):
         return {"node": "List the storages attached to the node"}
