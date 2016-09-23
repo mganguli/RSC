@@ -25,6 +25,11 @@ sudo mv /tmp/rsc-api.conf /etc/init/rsc-api.conf
 sed s/\${CHUID}/$USER/  $DIR/doc/source/init/rsc-controller.conf > /tmp/rsc-controller.conf
 sudo mv /tmp/rsc-controller.conf /etc/init/rsc-controller.conf
 
+# create conf directory for rsc
+sudo mkdir /etc/rsc
+sudo chown ${USER}:${USER} /etc/rsc
+sudo cp etc/rsc/rsc.conf.sample /etc/rsc/rsc.conf
+
 
 # create log directory for rsc
 sudo mkdir /var/log/rsc
