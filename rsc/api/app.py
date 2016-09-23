@@ -15,7 +15,6 @@ from oslo_middleware import request_id
 from oslo_service import service
 from pecan import configuration
 from pecan import make_app
-from rsc.api import hooks
 from rsc.common import exceptions as p_excp
 
 
@@ -28,7 +27,6 @@ def setup_app(*args, **kwargs):
         'app': {
             'root': 'rsc.api.controllers.root.RootController',
             'modules': ['rsc.api'],
-            'hooks': [hooks.RPCHook()],
             'errors': {
                 400: '/error',
                 '__force_dict__': True
