@@ -1,7 +1,6 @@
 import React from "react";
 import NodeList from "./NodeList";
 
-var config = require('../../config.js');
 var util = require('../../util.js');
 
 const ComposedNodeList = React.createClass({
@@ -16,21 +15,7 @@ const ComposedNodeList = React.createClass({
   },
 
   getComposedNodes() {
-    var composedNodes;
-    var url = config.url + '/redfish/v1/Nodes';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        composedNodes = util.listMembers(resp);
-        this.setData(composedNodes);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+    util.getNodes(this.setData);
   },
 
   setData(composedNodes) {

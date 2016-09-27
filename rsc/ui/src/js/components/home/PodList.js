@@ -16,21 +16,7 @@ const PodList = React.createClass({
   },
 
   getPods() {
-    var url = config.url + '/redfish/v1/Chassis';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        var chassis = util.listMembers(resp);
-        var pods = util.filterChassis(chassis, 'Pod');
-        this.setData(pods);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+    var pods = util.getPods(this.setData);
   },
 
   setData(pods) {

@@ -16,21 +16,7 @@ const RackList = React.createClass({
   },
 
   getRacks() {
-    var url = config.url + '/redfish/v1/Chassis';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        var chassis = util.listMembers(resp)
-        var racks = util.filterChassis(chassis, 'Rack');
-        this.setData(racks);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+    util.getRacks(this.setData);
   },
 
   setData(racks) {

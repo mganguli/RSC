@@ -16,21 +16,7 @@ const SystemList = React.createClass({
   },
 
   getSystems() {
-    var systems;
-    var url = config.url + '/redfish/v1/Systems';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        systems = util.listMembers(resp);
-        this.setData(systems);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+    util.getSystems(this.setData);
   },
 
   setData(systems) {

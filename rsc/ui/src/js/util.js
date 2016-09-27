@@ -1,5 +1,75 @@
 var config = require('./config.js');
 
+exports.getPods = function(callback) {
+  var url = config.url + '/redfish/v1/Chassis';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var chassis = this.listMembers(resp);
+      var pods = this.filterChassis(chassis, 'Pod');
+      callback(pods);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
+exports.getRacks = function(callback) {
+  var url = config.url + '/redfish/v1/Chassis';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var chassis = this.listMembers(resp);
+      var racks = this.filterChassis(chassis, 'Rack');
+      callback(racks);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.log(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
+exports.getSystems = function(callback) {
+  var url = config.url + '/redfish/v1/Systems';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var systems = this.listMembers(resp);
+      callback(systems);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
+exports.getNodes = function(callback) {
+  var url = config.url + '/redfish/v1/Nodes';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var nodes = this.listMembers(resp);
+      callback(nodes);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
 exports.listMembers = function(jsonContent) {
   var returnMembers = [];
   var members = jsonContent['Members'];
