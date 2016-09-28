@@ -120,6 +120,7 @@ const Layout = React.createClass({
         />
         <ComposeDisplay
           display={this.state.composeDisplay}
+          systemList={this.state.systems}
           onHideCompose={this.displayHome}
         />
 
