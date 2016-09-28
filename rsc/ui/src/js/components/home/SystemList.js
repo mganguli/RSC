@@ -6,26 +6,26 @@ var util = require('../../util.js');
 
 const SystemList = React.createClass({
 
-  getInitialState() {
-    return {systems: []};
-  },
-
   componentWillMount() {
     this.getSystems();
     setInterval(this.getSystems, 2000);
   },
 
   getSystems() {
-    util.getSystems(this.setData);
+    util.getSystems(this.setSystems);
   },
 
-  setData(systems) {
-    this.setState({systems: systems});
+  setSystems(systems) {
+    this.props.onUpdateSystems(systems);
   },
 
   render() {
     return (
-      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.systems} header="SYSTEMS" />
+      <ResourceList
+        onShowDetail={this.props.onShowDetail}
+        items={this.props.systemList}
+        header="SYSTEMS"
+      />
     );
   }
 });

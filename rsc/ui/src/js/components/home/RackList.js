@@ -6,26 +6,26 @@ var util = require('../../util.js');
 
 const RackList = React.createClass({
 
-  getInitialState() {
-    return {racks: []};
-  },
-
   componentWillMount() {
     this.getRacks();
     setInterval(this.getRacks, 2000);
   },
 
   getRacks() {
-    util.getRacks(this.setData);
+    util.getRacks(this.setRacks);
   },
 
-  setData(racks) {
-    this.setState({racks: racks});
+  setRacks(racks) {
+    this.props.onUpdateRacks(racks);
   },
 
   render() {
     return (
-      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.racks} header="RACKS" />
+      <ResourceList
+        onShowDetail={this.props.onShowDetail}
+        items={this.props.rackList}
+        header="RACKS"
+      />
     );
   }
 });

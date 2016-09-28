@@ -54,10 +54,34 @@ const Home = React.createClass({
             </div>
             <div class="col-sm-9 col-md-10 main">
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="pods"><PodList onShowDetail={this.props.onShowDetail} /></div>
-                <div role="tabpanel" class="tab-pane" id="racks"><RackList onShowDetail={this.props.onShowDetail} /></div>
-                <div role="tabpanel" class="tab-pane" id="systems"><SystemList onShowDetail={this.props.onShowDetail} /></div>
-                <div role="tabpanel" class="tab-pane" id="composednodes"><ComposedNodeList onShowDetail={this.props.onShowDetail} /></div>
+                <div role="tabpanel" class="tab-pane active" id="pods">
+                  <PodList
+                    onShowDetail={this.props.onShowDetail}
+                    onUpdatePods={this.props.onUpdatePods}
+                    podList={this.props.podList}
+                  />
+                </div>
+                <div role="tabpanel" class="tab-pane" id="racks">
+                  <RackList
+                    onShowDetail={this.props.onShowDetail}
+                    onUpdateRacks={this.props.onUpdateRacks}
+                    rackList={this.props.rackList}
+                  />
+                </div>
+                <div role="tabpanel" class="tab-pane" id="systems">
+                  <SystemList
+                    onShowDetail={this.props.onShowDetail}
+                    onUpdateSystems={this.props.onUpdateSystems}
+                    systemList={this.props.systemList}
+                  />
+                </div>
+                <div role="tabpanel" class="tab-pane" id="composednodes">
+                  <ComposedNodeList
+                    onShowDetail={this.props.onShowDetail}
+                    onUpdateNodes={this.props.onUpdateNodes}
+                    nodeList={this.props.nodeList}
+                  />
+                </div>
               </div>
             </div>
           </div>

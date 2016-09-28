@@ -10,7 +10,11 @@ const Layout = React.createClass({
       homeDisplay: "inline-block",
       detailDisplay: "none",
       composeDisplay: "none",
-      detailData: ""
+      detailData: "",
+      pods: [],
+      racks: [],
+      systems: [],
+      nodes: []
     };
   },
 
@@ -39,6 +43,22 @@ const Layout = React.createClass({
       composeDisplay: "inline-block",
       detailData: ""
     });
+  },
+
+  updatePods: function(pods) {
+    this.setState({pods: pods});
+  },
+
+  updateRacks: function(racks) {
+    this.setState({racks: racks});
+  },
+
+  updateSystems: function(systems) {
+    this.setState({systems: systems});
+  },
+
+  updateNodes: function(nodes) {
+    this.setState({nodes: nodes});
   },
 
   render: function() {
@@ -80,9 +100,28 @@ const Layout = React.createClass({
           </div>
         </nav>
 
-        <Home display={this.state.homeDisplay} onShowDetail={this.displayDetail} onShowCompose={this.displayCompose} />
-        <DetailDisplay display={this.state.detailDisplay} data={this.state.detailData} onHideDetail={this.displayHome} />
-        <ComposeDisplay display={this.state.composeDisplay} onHideCompose={this.displayHome} />
+        <Home
+          display={this.state.homeDisplay}
+          podList={this.state.pods}
+          rackList={this.state.racks}
+          systemList={this.state.systems}
+          nodeList={this.state.nodes}
+          onShowDetail={this.displayDetail}
+          onShowCompose={this.displayCompose}
+          onUpdatePods={this.updatePods}
+          onUpdateRacks={this.updateRacks}
+          onUpdateSystems={this.updateSystems}
+          onUpdateNodes={this.updateNodes}
+        />
+        <DetailDisplay
+          display={this.state.detailDisplay}
+          data={this.state.detailData}
+          onHideDetail={this.displayHome}
+        />
+        <ComposeDisplay
+          display={this.state.composeDisplay}
+          onHideCompose={this.displayHome}
+        />
 
         <footer class="footer navbar-fixed-bottom">
           <div class="container">

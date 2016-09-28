@@ -6,26 +6,26 @@ var util = require('../../util.js');
 
 const PodList = React.createClass({
 
-  getInitialState() {
-    return {pods: []};
-  },
-
   componentWillMount() {
     this.getPods();
     setInterval(this.getPods, 2000);
   },
 
   getPods() {
-    var pods = util.getPods(this.setData);
+    var pods = util.getPods(this.setPods);
   },
 
-  setData(pods) {
-    this.setState({pods: pods});
+  setPods(pods) {
+    this.props.onUpdatePods(pods);
   },
 
   render() {
     return (
-      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.pods} header="PODS" />
+      <ResourceList
+        onShowDetail={this.props.onShowDetail}
+        items={this.props.podList}
+        header="PODS"
+      />
     );
   }
 });
