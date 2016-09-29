@@ -24,7 +24,7 @@ class assettagGenerator(generatorbase):
       generatorbase.__init__(self, nodes)
 
     def description(self):
-      return "Generates 3 flavors(Tiny, Medium, Large) for each node considering all cpu cores, ram and storage"
+      return "Demo only: Generates location based on assettag"
 
     def generate(self):
       LOG.info("Default Generator")

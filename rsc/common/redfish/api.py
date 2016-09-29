@@ -394,7 +394,6 @@ def nodes_list(count=None, filters={}):
         if "EthernetInterfaces" in node["Links"]:
             nw = len(node["Links"]["EthernetInterfaces"])
         
-        storage = 0
         bmcip = "127.0.0.1" #system['Oem']['Dell_G5MC']['BmcIp']
         bmcmac = "00:00:00:00:00" #system['Oem']['Dell_G5MC']['BmcMac']
         node = {"nodeid": nodeid, "cpu": cpu,
