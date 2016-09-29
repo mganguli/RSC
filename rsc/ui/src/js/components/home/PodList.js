@@ -6,40 +6,26 @@ var util = require('../../util.js');
 
 const PodList = React.createClass({
 
-  getInitialState() {
-    return {pods: []};
-  },
-
   componentWillMount() {
     this.getPods();
     setInterval(this.getPods, 2000);
   },
 
   getPods() {
-    var url = config.url + '/redfish/v1/Chassis';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        var chassis = util.listMembers(resp);
-        var pods = util.filterChassis(chassis, 'Pod');
-        this.setData(pods);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+    var pods = util.getPods(this.setPods);
   },
 
-  setData(pods) {
-    this.setState({pods: pods});
+  setPods(pods) {
+    this.props.onUpdatePods(pods);
   },
 
   render() {
     return (
-      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.pods} header="PODS" />
+      <ResourceList
+        onShowDetail={this.props.onShowDetail}
+        items={this.props.podList}
+        header="PODS"
+      />
     );
   }
 });

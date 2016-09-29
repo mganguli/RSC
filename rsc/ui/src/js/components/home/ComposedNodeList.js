@@ -1,45 +1,31 @@
 import React from "react";
 import NodeList from "./NodeList";
 
-var config = require('../../config.js');
 var util = require('../../util.js');
 
 const ComposedNodeList = React.createClass({
 
-  getInitialState() {
-    return {composedNodes: []};
-  },
-
   componentWillMount() {
-    this.getComposedNodes();
-    setInterval(this.getComposedNodes, 2000);
+    this.getNodes();
+    setInterval(this.getNodes, 2000);
   },
 
-  getComposedNodes() {
-    var composedNodes;
-    var url = config.url + '/redfish/v1/Nodes';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        composedNodes = util.listMembers(resp);
-        this.setData(composedNodes);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+  getNodes() {
+    util.getNodes(this.setNodes);
   },
 
-  setData(composedNodes) {
-    this.setState({composedNodes: composedNodes});
+  setNodes(nodes) {
+    this.props.onUpdateNodes(nodes);
   },
 
   render() {
     return (
-      <NodeList updateList={this.getComposedNodes} onShowDetail={this.props.onShowDetail} items={this.state.composedNodes} header="COMPOSED NODES" />
+      <NodeList
+        updateList={this.getNodes}
+        onShowDetail={this.props.onShowDetail}
+        items={this.props.nodeList}
+        header="COMPOSED NODES"
+      />
     );
   }
 });

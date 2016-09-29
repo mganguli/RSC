@@ -6,40 +6,26 @@ var util = require('../../util.js');
 
 const RackList = React.createClass({
 
-  getInitialState() {
-    return {racks: []};
-  },
-
   componentWillMount() {
     this.getRacks();
     setInterval(this.getRacks, 2000);
   },
 
   getRacks() {
-    var url = config.url + '/redfish/v1/Chassis';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        var chassis = util.listMembers(resp)
-        var racks = util.filterChassis(chassis, 'Rack');
-        this.setData(racks);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+    util.getRacks(this.setRacks);
   },
 
-  setData(racks) {
-    this.setState({racks: racks});
+  setRacks(racks) {
+    this.props.onUpdateRacks(racks);
   },
 
   render() {
     return (
-      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.racks} header="RACKS" />
+      <ResourceList
+        onShowDetail={this.props.onShowDetail}
+        items={this.props.rackList}
+        header="RACKS"
+      />
     );
   }
 });

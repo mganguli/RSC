@@ -1,8 +1,20 @@
 import React from "react";
 
 var config = require('../../config.js');
+var util = require('../../util.js');
 
 const ComposeDisplay = React.createClass({
+
+  getInitialState: function() {
+    return {
+      processors: []
+    };
+  },
+
+  componentDidMount() {
+    this.getProcessors();
+    setInterval(this.getProcessors, 2000);
+  },
 
   compose: function() {
     var data = this.prepareRequest();
@@ -22,18 +34,46 @@ const ComposeDisplay = React.createClass({
     });
     this.clearInputs()
     this.props.onHideCompose();
-  },  
+  },
+
+  getProcessors: function() {
+    util.getProcessors(this.props.systemList, this.setProcessors);
+  },
+
+  setProcessors: function(processors) {
+    this.setState({processors: processors});
+    this.fillForms();
+  },
+
+  fillForms: function() {
+    var sel = document.getElementById('procModels');
+    sel.innerHTML = "";
+    for (var i = 0; i < this.state.processors.length; i++) {
+      if (this.state.processors[i]['Model']) {
+        var opt = document.createElement('option');
+        opt.innerHTML = this.state.processors[i]['Model'];
+        opt.value = this.state.processors[i]['Model'];
+        sel.appendChild(opt);
+      }
+    }
+  },
 
   prepareRequest: function() {
-    var test;
     var name = document.getElementById('name').value;
     var description = document.getElementById('description').value;
     var totalMem = document.getElementById('totalMem').value;
+    var procModel = document.getElementById('procModels').value;
+    if (procModel == "") {
+      procModel = null;
+    }
     var data = {
       "Name": name,
       "Description": description,
       "Memory": [{
         "CapacityMiB": totalMem * 1000
+      }],
+      "Processors": [{
+        "Model": procModel
       }]
     }
     return JSON.stringify(data);
@@ -59,7 +99,11 @@ const ComposeDisplay = React.createClass({
                 </tr>
                 <tr>
                   <td align="right">System Memory GB:</td>
-                  <td align="left"><input type="number" id="totalMem" /></td>
+                  <td align="left"><input type="number" min="0" id="totalMem" /></td>
+                </tr>
+                <tr>
+                  <td align="right">Processor Model:</td>
+                  <td align="left"><select id="procModels" /></td>
                 </tr>
               </tbody>
             </table>

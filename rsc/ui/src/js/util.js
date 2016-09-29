@@ -1,20 +1,104 @@
 var config = require('./config.js');
+var util = require('./util.js');
 
-exports.listMembers = function(jsonContent) {
-  var returnMembers = [];
-  var members = jsonContent['Members'];
-  var count = jsonContent['Members@odata.count'];
+exports.getPods = function(callback) {
+  var url = config.url + '/redfish/v1/Chassis';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var chassis = this.listItems(resp['Members']);
+      var pods = this.filterChassis(chassis, 'Pod');
+      callback(pods);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
 
-  var resource;
-  var memberJson;
-  var memberJsonObj;
-  for (var i=0; i<count; i++) {
-    resource = members[i]['@odata.id'];
-    memberJson = this.readAndReturn(resource);
-    memberJsonObj = JSON.parse(memberJson);
-    returnMembers.push(memberJsonObj);
+exports.getRacks = function(callback) {
+  var url = config.url + '/redfish/v1/Chassis';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var chassis = this.listItems(resp['Members']);
+      var racks = this.filterChassis(chassis, 'Rack');
+      callback(racks);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.log(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
+exports.getSystems = function(callback) {
+  var url = config.url + '/redfish/v1/Systems';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var systems = this.listItems(resp['Members']);
+      callback(systems);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
+exports.getNodes = function(callback) {
+  var url = config.url + '/redfish/v1/Nodes';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var nodes = this.listItems(resp['Members']);
+      callback(nodes);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
+exports.getProcessors = function(systems, callback) {
+  var processors = [];
+  var systemProcessorIds;
+  var systemProcessors;
+  for (var i = 0; i < systems.length; i++) {
+    systemProcessorIds = util.readAndReturn(systems[i]['Processors']['@odata.id']);
+    systemProcessorIds = JSON.parse(systemProcessorIds);
+    systemProcessors = util.listItems(systemProcessorIds['Members']);
+    for (var j = 0; j < systemProcessors.length; j++) {
+      processors.push(systemProcessors[j]);
+    }
   }
-  return returnMembers;
+  callback(processors);
+};
+
+exports.listItems = function(items) {
+  var returnItems = [];
+  var count = items.length;
+  var resource;
+  var itemJson;
+  var itemJsonObj;
+  for (var i=0; i<count; i++) {
+    resource = items[i]['@odata.id'];
+    itemJson = this.readAndReturn(resource);
+    itemJsonObj = JSON.parse(itemJson);
+    returnItems.push(itemJsonObj);
+  }
+  return returnItems;
 };
 
 exports.filterChassis = function(memberList, filter) {

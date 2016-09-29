@@ -6,40 +6,26 @@ var util = require('../../util.js');
 
 const SystemList = React.createClass({
 
-  getInitialState() {
-    return {systems: []};
-  },
-
   componentWillMount() {
     this.getSystems();
     setInterval(this.getSystems, 2000);
   },
 
   getSystems() {
-    var systems;
-    var url = config.url + '/redfish/v1/Systems';
-    $.ajax({
-      url: url,
-      type: 'GET',
-      dataType: 'json',
-      cache: false,
-      success: function(resp) {
-        systems = util.listMembers(resp);
-        this.setData(systems);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(url, status, err.toString());
-      }.bind(this)
-    });
+    util.getSystems(this.setSystems);
   },
 
-  setData(systems) {
-    this.setState({systems: systems});
+  setSystems(systems) {
+    this.props.onUpdateSystems(systems);
   },
 
   render() {
     return (
-      <ResourceList onShowDetail={this.props.onShowDetail} items={this.state.systems} header="SYSTEMS" />
+      <ResourceList
+        onShowDetail={this.props.onShowDetail}
+        items={this.props.systemList}
+        header="SYSTEMS"
+      />
     );
   }
 });
