@@ -38,7 +38,8 @@ def send_request(resource, method="GET",**kwargs):
     # The verify=false param in the request should be removed eventually
     url = get_rfs_url(resource)
     httpuser = cfg.CONF.podm.user
-    httppwd = cfg.CONF.podm.password 
+    httppwd = cfg.CONF.podm.password
+    resp = None 
     try:
         resp = requests.request(method, url, verify=False, auth=HTTPBasicAuth(httpuser, httppwd), **kwargs)    
     except requests.exceptions.RequestException as e:
@@ -191,8 +192,8 @@ def node_ram_details(nodeurl):
     resp = send_request(nodeurl)
     respjson = resp.json()
     ram = extract_val(respjson, "MemorySummary/TotalSystemMemoryGiB")
-    LOG.debug(" Total Ram for node %s : %d " % (nodeurl, ram))
-    return str(ram)
+    #LOG.debug(" Total Ram for node %s : %d " % (nodeurl, ram))
+    return str(ram) if ram else "0"
 
 
 def node_nw_details(nodeurl):
@@ -201,7 +202,7 @@ def node_nw_details(nodeurl):
     respbody = resp.json()
     nwi = extract_val(respbody, "Members@odata.count")
     LOG.debug(" Total NW for node %s : %d " % (nodeurl, nwi))
-    return str(nwi)
+    return str(nwi) if nwi else "0"
 
 
 def node_storage_details(nodeurl):
@@ -225,7 +226,7 @@ def systems_list(count=None, filters={}):
     # comment the count value which is set to 2 now..
     # list of nodes with hardware details needed for flavor creation
     # count = 2
-    lst_nodes = []
+    lst_systems = []
     systemurllist = urls2list("Systems")
     podmtree = build_hierarchy_tree()
     #podmtree.writeHTML("0","/tmp/a.html")
@@ -242,19 +243,17 @@ def systems_list(count=None, filters={}):
         if not filterPassed:
             continue
 
-        nodeid = lnk.split("/")[-1]
-        nodeuuid = system['UUID']
-        nodelocation = podmtree.getPath(lnk)
+        systemid = lnk.split("/")[-1]
+        systemuuid = system['UUID']
+        systemlocation = podmtree.getPath(lnk)
         cpu = node_cpu_details(lnk)
         ram = node_ram_details(lnk)
         nw = node_nw_details(lnk)
         storage = node_storage_details(lnk)
-        bmcip = "127.0.0.1" #system['Oem']['Dell_G5MC']['BmcIp']
-        bmcmac = "00:00:00:00:00" #system['Oem']['Dell_G5MC']['BmcMac']
-        node = {"nodeid": nodeid, "cpu": cpu,
+        node = {"nodeid": systemid, "cpu": cpu,
                 "ram": ram, "storage": storage,
-                "nw": nw, "location": nodelocation,
-                "uuid": nodeuuid, "bmcip": bmcip, "bmcmac": bmcmac}
+                "nw": nw, "location": systemlocation,
+                "uuid": systemuuid}
 
         # filter based on RAM, CPU, NETWORK..etc
         if 'ram' in filters:
@@ -275,9 +274,9 @@ def systems_list(count=None, filters={}):
                             else False)
 
         if filterPassed:
-            lst_nodes.append(node)
+            lst_systems.append(node)
         # LOG.info(str(node))
-    return lst_nodes
+    return lst_systems
 
 
 def get_chassis_list():
@@ -317,7 +316,7 @@ def get_chassis_list():
 
 
 def get_nodebyid(nodeid):
-    resp = send_request("Systems/" + nodeid)
+    resp = send_request("Nodes/" + nodeid)
     return resp.json()
 
 
@@ -352,3 +351,57 @@ def compose_node(criteria={}):
     LOG.info(resp.status_code)
     composednode = resp.headers['Location']
     return { "node" : composednode }
+
+
+def nodes_list(count=None, filters={}):
+    # comment the count value which is set to 2 now..
+    # list of nodes with hardware details needed for flavor creation
+    # count = 2
+    lst_nodes = []
+    nodeurllist = urls2list("Nodes")
+    #podmtree = build_hierarchy_tree()
+    #podmtree.writeHTML("0","/tmp/a.html")
+
+    for lnk in nodeurllist:
+        filterPassed = True
+        resp = send_request(lnk)
+        node = resp.json()
+
+        # this below code need to be changed when proper query mechanism
+        # is implemented
+        if any(filters):
+            filterPassed = generic_filter(node, filters)
+        if not filterPassed:
+            continue
+
+        nodeid = lnk.split("/")[-1]
+        nodeuuid = node['UUID']
+        nodelocation = node['AssetTag'] 
+        #podmtree.getPath(lnk) commented as location should be computed using
+        #other logic.consult Chester
+        nodesystemurl = node["Links"]["ComputerSystem"]["@odata.id"] 
+        cpu = {}
+        ram = 0
+        nw = 0
+        localstorage = node_storage_details(nodesystemurl)
+        if "Processors" in node:
+            cpu = { "count" : node["Processors"]["Count"],
+                    "model" : node["Processors"]["Model"]}
+        
+        if "Memory" in node:
+            ram = node["Memory"]["TotalSystemMemoryGiB"]
+        
+        if "EthernetInterfaces" in node["Links"]:
+            nw = len(node["Links"]["EthernetInterfaces"])
+        
+        storage = 0
+        bmcip = "127.0.0.1" #system['Oem']['Dell_G5MC']['BmcIp']
+        bmcmac = "00:00:00:00:00" #system['Oem']['Dell_G5MC']['BmcMac']
+        node = {"nodeid": nodeid, "cpu": cpu,
+                "ram": ram, "storage": localstorage,
+                "nw": nw, "location": nodelocation,
+                "uuid": nodeuuid, "bmcip": bmcip, "bmcmac": bmcmac}
+        if filterPassed:
+            lst_nodes.append(node)
+            # LOG.info(str(node))
+        return lst_nodes

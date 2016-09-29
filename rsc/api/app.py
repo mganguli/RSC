@@ -40,6 +40,7 @@ def setup_app(*args, **kwargs):
     app = make_app(
         pecan_config.app.root,
         hooks=app_hooks,
+        force_canonical = False,
         logging=getattr(config, 'logging', {})
     )
     return app
