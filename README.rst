@@ -46,6 +46,8 @@ RSC installation
          
      ``set the ip/credentials of podm for which this RSC will interact``
 
+     ``set the rabbitmq user/password to the one given above(Step 2)``
+
  7. Check the values in /etc/init/rsc-api.conf, /etc/init/rsc-controller.conf 
 
  8. Start api and controller services
