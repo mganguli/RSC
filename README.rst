@@ -32,7 +32,7 @@ RSC installation
 
      ``$ sudo rabbitmqctl set_permissions rsd ".*" ".*" ".*"``
    
- 3. Clone the RSC code from git repo. And change directory to root RSC folder.
+ 3. Clone the RSC code from git repo and change the directory to root RSC folder.
 
  4. Install all necessary software pre-requisites using the pip requirements file. 
 
