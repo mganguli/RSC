@@ -21,16 +21,21 @@ RSC installation
 ********************
 
  1. Install software dependencies
+
     ``$ sudo apt-get install git python-pip rabbitmq-server libyaml-0-2 python-dev``
 
  2. Configure RabbitMq Server
+
      ``$ sudo rabbitmqctl add_user rsd rsd    #user this username/pwd in rsc.conf``
+
      ``$ sudo rabbitmqctl set_user_tags rsd administrator``
+
      ``$ sudo rabbitmqctl set_permissions rsd ".*" ".*" ".*"``
    
  3. Clone the RSC code from git repo. And change directory to root RSC folder.
 
  4. Install all necessary software pre-requisites using the pip requirements file. 
+
     ``$ sudo -E pip install -r requirements.txt``
 
  5. Execute the 'install_rsc.sh' file the RSC root directory. 
