@@ -19,22 +19,37 @@ The following steps capture how to install rsc. All installation steps require s
 ********************
 RSC installation
 ********************
- 1. Clone the RSC code from git repo. 
- 2. Install all necessary software pre-requisites using the pip requirements file. 
 
-    ``$ pip install -r requirements.txt``
- 3. Execute the setup.py file to install the RSC package. 
+ 1. Install software dependencies
+    ``$ sudo apt-get install git python-pip rabbitmq-server libyaml-0-2 python-dev``
 
-    ``$ python setup.py install``
+ 2. Configure RabbitMq Server
+     ``$ sudo rabbitmqctl add_user rsd rsd    #user this username/pwd in rsc.conf``
+     ``$ sudo rabbitmqctl set_user_tags rsd administrator``
+     ``$ sudo rabbitmqctl set_permissions rsd ".*" ".*" ".*"``
+   
+ 3. Clone the RSC code from git repo. And change directory to root RSC folder.
+
+ 4. Install all necessary software pre-requisites using the pip requirements file. 
+    ``$ sudo -E pip install -r requirements.txt``
+
+ 5. Execute the 'install_rsc.sh' file the RSC root directory. 
+
+    ``$ ./install_rsc.sh``
  
- 4. Copy the rsc-api.conf, plasma-controller.conf from rsc/doc/source/samples directory to /etc/rsc/. 
- 5. Edit the rsc-api.conf, rsc-controller.conf to set log file and config file locations
- 6. Start api and controller services
+ 6. Check the values in rsc.conf located at /etc/rsc/rsc.conf   
+         
+     ``set the ip/credentials of podm for which this RSC will interact``
+
+ 7. Check the values in /etc/init/rsc-api.conf, /etc/init/rsc-controller.conf 
+
+ 8. Start api and controller services
     
     ``$ service rsc-api start`` 
 
     ``$ service rsc-controller start``
 
+ 9. Logs are located at /var/logs/rsc/
 
 ****************
 GUI installation
