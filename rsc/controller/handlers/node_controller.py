@@ -34,7 +34,7 @@ class Handler(object):
 
     def list_nodes(self, context, filters):
         LOG.info(str(filters))
-        return rfsapi.systems_list(None, filters)
+        return rfsapi.nodes_list(None, filters)
 
     def get_nodebyid(self, context, nodeid):
         return rfsapi.get_nodebyid(nodeid)

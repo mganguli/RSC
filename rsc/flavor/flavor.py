@@ -43,7 +43,7 @@ def create_flavors(criteria):
 
     """
     respjson = []
-    lst_nodes = rfs.systems_list()
+    lst_nodes = rfs.nodes_list()
     for g in criteria.split(","):
         if g:
             logger.info("Calling generator : %s ." % g)
