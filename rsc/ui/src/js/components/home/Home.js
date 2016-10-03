@@ -25,6 +25,9 @@ const Home = React.createClass({
       },
       data: JSON.stringify(config.nodeConfig),
       dataType: 'text',
+      success: function(resp) {
+        this.getNodes();
+      }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
       }.bind(this)
