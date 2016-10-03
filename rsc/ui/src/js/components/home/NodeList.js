@@ -15,7 +15,7 @@ const NodeList = React.createClass({
         'Content-Type': 'application/json'
       },
       success: function(resp) {
-        this.props.updateList();
+        this.props.onUpdateNodes();
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());

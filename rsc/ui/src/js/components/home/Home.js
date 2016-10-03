@@ -115,6 +115,7 @@ const Home = React.createClass({
                 <div role="tabpanel" class="tab-pane" id="composednodes">
                   <ComposedNodeList
                     onShowDetail={this.props.onShowDetail}
+                    onUpdateNodes={this.getNodes}
                     nodeList={this.props.nodeList}
                   />
                 </div>

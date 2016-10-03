@@ -6,7 +6,7 @@ const ComposedNodeList = React.createClass({
   render: function() {
     return (
       <NodeList
-        updateList={this.getNodes}
+        onUpdateNodes={this.props.onUpdateNodes}
         onShowDetail={this.props.onShowDetail}
         items={this.props.nodeList}
         header="COMPOSED NODES"
