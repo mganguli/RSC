@@ -32,7 +32,7 @@ exports.getRacks = function(callback) {
       callback(racks);
     }.bind(this),
     error: function(xhr, status, err) {
-      console.log(url, status, err.toString());
+      console.error(url, status, err.toString());
     }.bind(this)
   });
 };
