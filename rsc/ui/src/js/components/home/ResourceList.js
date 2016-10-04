@@ -5,12 +5,12 @@ var util = require('../../util.js');
 const ResourceList = React.createClass({
 
   renderList: function() {
-    return this.props.items.map((item, i) =>
-      <div class="item" key={i}>
-        {item.Name}
-        <input type="button" class="detail-button" onClick={() => this.props.onShowDetail(item)} value="Show" />
+    return this.props.resources.map((resource, i) =>
+      <div class="resource" key={i}>
+        {resource.Name}
+        <input type="button" class="detail-button" onClick={() => this.props.onShowDetail(resource)} value="Show" />
         <br />
-        {item.Description}
+        {resource.Description}
         <hr class="separator"/>
       </div>
     );
@@ -25,6 +25,6 @@ const ResourceList = React.createClass({
   },
 });
 
-ResourceList.defaultProps = { items: [], header: ""};
+ResourceList.defaultProps = { resources: [], header: ""};
 
 export default ResourceList;

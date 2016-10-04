@@ -24,13 +24,13 @@ const NodeList = React.createClass({
   },
 
   renderList: function() {
-    return this.props.items.map((item, i) =>
+    return this.props.nodes.map((node, i) =>
       <div class="item" key={i}>
-        {item.Name}
-        <input type="button" class="detail-button" onClick={() => this.props.onShowDetail(item)} value="Show" />
-        <input type="button" class="detail-button" onClick={() => this.delete(item.Id)} value="Delete" />
+        {node.Name}
+        <input type="button" class="detail-button" onClick={() => this.props.onShowDetail(node)} value="Show" />
+        <input type="button" class="detail-button" onClick={() => this.delete(node.Id)} value="Delete" />
         <br />
-        {item.Description}
+        {node.Description}
         <hr class="separator"/>
       </div>
     );
@@ -45,6 +45,6 @@ const NodeList = React.createClass({
   },
 });
 
-NodeList.defaultProps = { items: [], header: ""};
+NodeList.defaultProps = { nodes: [], header: ""};
 
 export default NodeList;

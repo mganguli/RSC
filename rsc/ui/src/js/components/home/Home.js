@@ -1,8 +1,6 @@
 import React from "react";
-import PodList from "./PodList";
-import RackList from "./RackList";
-import SystemList from "./SystemList";
-import ComposedNodeList from "./ComposedNodeList";
+import ResourceList from "./ResourceList";
+import NodeList from "./NodeList";
 
 var config = require('../../config.js');
 var util = require('../../util.js');
@@ -98,28 +96,32 @@ const Home = React.createClass({
             <div class="col-sm-9 col-md-10 main">
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="pods">
-                  <PodList
+                  <ResourceList
                     onShowDetail={this.props.onShowDetail}
-                    podList={this.props.podList}
+                    resources={this.props.podList}
+                    header="PODS"
                   />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="racks">
-                  <RackList
+                  <ResourceList
                     onShowDetail={this.props.onShowDetail}
-                    rackList={this.props.rackList}
+                    resources={this.props.rackList}
+                    header="RACKS"
                   />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="systems">
-                  <SystemList
+                  <ResourceList
                     onShowDetail={this.props.onShowDetail}
-                    systemList={this.props.systemList}
+                    resources={this.props.systemList}
+                    header="SYSTEMS"
                   />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="composednodes">
-                  <ComposedNodeList
+                  <NodeList
                     onShowDetail={this.props.onShowDetail}
                     onUpdateNodes={this.getNodes}
-                    nodeList={this.props.nodeList}
+                    nodes={this.props.nodeList}
+                    header="COMPOSED NODES"
                   />
                 </div>
               </div>
