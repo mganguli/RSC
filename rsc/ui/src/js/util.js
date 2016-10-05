@@ -71,6 +71,23 @@ exports.getNodes = function(callback) {
   });
 };
 
+exports.getStorage = function(callback) {
+  var url = config.url + '/redfish/v1/Services/1/LogicalDrives';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var drives = this.listItems(resp['Members']);
+      callback(drives);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
 exports.getProcessors = function(systems, callback) {
   var processors = [];
   var systemProcessorIds;

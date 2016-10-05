@@ -36,6 +36,7 @@ const Home = React.createClass({
     this.getPods();
     this.getRacks();
     this.getSystems();
+    this.getStorage();
     this.getNodes();
   },
 
@@ -49,6 +50,10 @@ const Home = React.createClass({
 
   getSystems: function() {
     util.getSystems(this.setSystems);
+  },
+
+  getStorage: function() {
+    util.getStorage(this.setStorage);
   },
 
   getNodes: function() {
@@ -65,6 +70,10 @@ const Home = React.createClass({
 
   setSystems: function(systems) {
     this.props.onUpdateSystems(systems);
+  },
+
+  setStorage: function(storage) {
+    this.props.onUpdateStorage(storage);
   },
 
   setNodes: function(nodes) {
@@ -90,6 +99,7 @@ const Home = React.createClass({
                 <li class="active"><a href="#pods" data-toggle="tab" onClick={() => this.getPods()}>PODS</a></li>
                 <li><a href="#racks" data-toggle="tab" onClick={() => this.getRacks()}>RACKS</a></li>
                 <li><a href="#systems" data-toggle="tab" onClick={() => this.getSystems()}>SYSTEMS</a></li>
+                <li><a href="#storage" data-toggle="tab" onClick={() => this.getStorage()}>STORAGE</a></li>
                 <li><a href="#composednodes" data-toggle="tab" onClick={() => this.getNodes()}>COMPOSED NODES</a></li>
               </ul>
             </div>
@@ -114,6 +124,13 @@ const Home = React.createClass({
                     onShowDetail={this.props.onShowDetail}
                     resources={this.props.systemList}
                     header="SYSTEMS"
+                  />
+                </div>
+                <div role="tabpanel" class="tab-pane" id="storage">
+                  <ResourceList
+                    onShowDetail={this.props.onShowDetail}
+                    resources={this.props.storageList}
+                    header="STORAGE"
                   />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="composednodes">
