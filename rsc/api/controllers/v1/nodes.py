@@ -17,6 +17,7 @@ from oslo_log import log as logging
 import pecan
 from pecan import expose
 from pecan import request
+from pecan import response
 from pecan.rest import RestController
 from rsc.controller import api as controller_api
 
@@ -24,9 +25,19 @@ CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 
-class NodeDetailController(object):
+#class NodeDetailController(object):
+class NodeDetailController(RestController):
     def __init__(self, nodeid):
         self.nodeid = nodeid
+
+    # HTTP GET /nodes/
+    @expose()
+    def delete(self):
+        LOG.debug("DELETE /nodes")
+        rpcapi = controller_api.API(context=request.context)
+        res = rpcapi.delete_composednode(nodeid=self.nodeid)
+        LOG.info(str(res))
+        return res 
 
     @expose()
     def storages(self):
@@ -39,15 +50,16 @@ class NodesController(RestController):
         super(NodesController, self).__init__(*args, **kwargs)
 
     # HTTP GET /nodes/
-    @expose(generic=True, template='json')
-    def index(self, **kwargs):
+    @expose(template='json')
+    def get_all(self, **kwargs):
         LOG.debug("GET /nodes")
         rpcapi = controller_api.API(context=request.context)
         res = rpcapi.list_nodes(filters=kwargs)
         return res
 
     # HTTP GET /nodes/
-    @index.when(method='POST', template='json')
+#    @index.when(method='POST', template='json')
+    @expose(template='json')
     def post(self, **kwargs):
         LOG.debug("POST /nodes")
         rpcapi = controller_api.API(context=request.context)
@@ -56,7 +68,7 @@ class NodesController(RestController):
 
     @expose(template='json')
     def get(self, nodeid):
-        LOG.debug("POST /nodes" + nodeid)
+        LOG.debug("GET /nodes" + nodeid)
         rpcapi = controller_api.API(context=request.context)
         node = rpcapi.get_nodebyid(nodeid=nodeid)
         if not node:
