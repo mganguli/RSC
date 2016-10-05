@@ -350,8 +350,15 @@ def compose_node(criteria={}):
     LOG.info(resp.text)
     LOG.info(resp.status_code)
     composednode = resp.headers['Location']
+
     return { "node" : composednode }
 
+
+def delete_composednode(nodeid):
+    #delete composed node
+    deleteurl = "Nodes/" + str(nodeid)
+    resp = send_request(deleteurl, "DELETE")
+    return resp
 
 def nodes_list(count=None, filters={}):
     # comment the count value which is set to 2 now..
@@ -365,42 +372,46 @@ def nodes_list(count=None, filters={}):
     for lnk in nodeurllist:
         filterPassed = True
         resp = send_request(lnk)
-        node = resp.json()
+        if resp.status_code != 200:
+            Log.info("Error in fetching Node details " + lnk)
+        else:
+            node = resp.json()
 
-        # this below code need to be changed when proper query mechanism
-        # is implemented
-        if any(filters):
-            filterPassed = generic_filter(node, filters)
-        if not filterPassed:
-            continue
+            # this below code need to be changed when proper query mechanism
+            # is implemented
+            if any(filters):
+                filterPassed = generic_filter(node, filters)
+            if not filterPassed:
+                continue
 
-        nodeid = lnk.split("/")[-1]
-        nodeuuid = node['UUID']
-        nodelocation = node['AssetTag'] 
-        #podmtree.getPath(lnk) commented as location should be computed using
-        #other logic.consult Chester
-        nodesystemurl = node["Links"]["ComputerSystem"]["@odata.id"] 
-        cpu = {}
-        ram = 0
-        nw = 0
-        localstorage = node_storage_details(nodesystemurl)
-        if "Processors" in node:
-            cpu = { "count" : node["Processors"]["Count"],
-                    "model" : node["Processors"]["Model"]}
-        
-        if "Memory" in node:
-            ram = node["Memory"]["TotalSystemMemoryGiB"]
-        
-        if "EthernetInterfaces" in node["Links"]:
-            nw = len(node["Links"]["EthernetInterfaces"])
-        
-        bmcip = "127.0.0.1" #system['Oem']['Dell_G5MC']['BmcIp']
-        bmcmac = "00:00:00:00:00" #system['Oem']['Dell_G5MC']['BmcMac']
-        node = {"nodeid": nodeid, "cpu": cpu,
-                "ram": ram, "storage": localstorage,
-                "nw": nw, "location": nodelocation,
-                "uuid": nodeuuid, "bmcip": bmcip, "bmcmac": bmcmac}
-        if filterPassed:
-            lst_nodes.append(node)
-            # LOG.info(str(node))
+            nodeid = lnk.split("/")[-1]
+            nodeuuid = node['UUID']
+            nodelocation = node['AssetTag']
+            #podmtree.getPath(lnk) commented as location should be computed using
+            #other logic.consult Chester
+            nodesystemurl = node["Links"]["ComputerSystem"]["@odata.id"]
+            cpu = {}
+            ram = 0
+            nw = 0
+            localstorage = node_storage_details(nodesystemurl)
+            if "Processors" in node:
+                cpu = { "count" : node["Processors"]["Count"],
+                        "model" : node["Processors"]["Model"]}
+
+            if "Memory" in node:
+                ram = node["Memory"]["TotalSystemMemoryGiB"]
+
+            if "EthernetInterfaces" in node["Links"]:
+                nw = len(node["Links"]["EthernetInterfaces"])
+
+            storage = 0
+            bmcip = "127.0.0.1" #system['Oem']['Dell_G5MC']['BmcIp']
+            bmcmac = "00:00:00:00:00" #system['Oem']['Dell_G5MC']['BmcMac']
+            node = {"nodeid": nodeid, "cpu": cpu,
+                    "ram": ram, "storage": localstorage,
+                    "nw": nw, "location": nodelocation,
+                    "uuid": nodeuuid, "bmcip": bmcip, "bmcmac": bmcmac}
+            if filterPassed:
+               lst_nodes.append(node)
+               # LOG.info(str(node))
         return lst_nodes
