@@ -40,7 +40,7 @@ class Handler(object):
         return rfsapi.get_nodebyid(nodeid)
 
     def delete_composednode(self, context, nodeid):
-        return {"node": "Delete the composed node"}
+        return rfsapi.delete_composednode(nodeid)
 
     def update_node(self, context, nodeid):
         return {"node": "Update node attributes"}

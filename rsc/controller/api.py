@@ -48,8 +48,8 @@ class API(rpc_service.API):
     def get_nodebyid(self, nodeid):
         return self._call('get_nodebyid', nodeid=nodeid)
 
-    def delete_composednode(self, criteria):
-        return self._call('delete_composednode')
+    def delete_composednode(self, nodeid):
+        return self._call('delete_composednode', nodeid=nodeid)
 
     def update_node(self, nodeid):
         return self._call('update_node')
