@@ -14,6 +14,7 @@ const Layout = React.createClass({
       pods: [],
       racks: [],
       systems: [],
+      storage: [],
       nodes: []
     };
   },
@@ -55,6 +56,10 @@ const Layout = React.createClass({
 
   updateSystems: function(systems) {
     this.setState({systems: systems});
+  },
+
+  updateStorage: function(storage) {
+    this.setState({storage: storage});
   },
 
   updateNodes: function(nodes) {
@@ -105,12 +110,14 @@ const Layout = React.createClass({
           podList={this.state.pods}
           rackList={this.state.racks}
           systemList={this.state.systems}
+          storageList={this.state.storage}
           nodeList={this.state.nodes}
           onShowDetail={this.displayDetail}
           onShowCompose={this.displayCompose}
           onUpdatePods={this.updatePods}
           onUpdateRacks={this.updateRacks}
           onUpdateSystems={this.updateSystems}
+          onUpdateStorage={this.updateStorage}
           onUpdateNodes={this.updateNodes}
         />
         <DetailDisplay

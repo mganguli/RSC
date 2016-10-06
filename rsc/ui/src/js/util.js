@@ -32,7 +32,7 @@ exports.getRacks = function(callback) {
       callback(racks);
     }.bind(this),
     error: function(xhr, status, err) {
-      console.log(url, status, err.toString());
+      console.error(url, status, err.toString());
     }.bind(this)
   });
 };
@@ -64,6 +64,23 @@ exports.getNodes = function(callback) {
     success: function(resp) {
       var nodes = this.listItems(resp['Members']);
       callback(nodes);
+    }.bind(this),
+    error: function(xhr, status, err) {
+      console.error(url, status, err.toString());
+    }.bind(this)
+  });
+};
+
+exports.getStorage = function(callback) {
+  var url = config.url + '/redfish/v1/Services/1/LogicalDrives';
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    cache: false,
+    success: function(resp) {
+      var drives = this.listItems(resp['Members']);
+      callback(drives);
     }.bind(this),
     error: function(xhr, status, err) {
       console.error(url, status, err.toString());

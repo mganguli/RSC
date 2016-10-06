@@ -1,10 +1,9 @@
 import React from "react";
-import PodList from "./PodList";
-import RackList from "./RackList";
-import SystemList from "./SystemList";
-import ComposedNodeList from "./ComposedNodeList";
+import ResourceList from "./ResourceList";
+import NodeList from "./NodeList";
 
 var config = require('../../config.js');
+var util = require('../../util.js');
 
 const Home = React.createClass({
 
@@ -24,10 +23,61 @@ const Home = React.createClass({
       },
       data: JSON.stringify(config.nodeConfig),
       dataType: 'text',
+      success: function(resp) {
+        this.getNodes();
+      }.bind(this),
       error: function(xhr, status, err) {
         console.error(url, status, err.toString());
       }.bind(this)
     });
+  },
+
+  componentWillMount: function() {
+    this.getPods();
+    this.getRacks();
+    this.getSystems();
+    this.getStorage();
+    this.getNodes();
+  },
+
+  getPods: function() {
+    util.getPods(this.setPods);
+  },
+
+  getRacks: function() {
+    util.getRacks(this.setRacks);
+  },
+
+  getSystems: function() {
+    util.getSystems(this.setSystems);
+  },
+
+  getStorage: function() {
+    util.getStorage(this.setStorage);
+  },
+
+  getNodes: function() {
+    util.getNodes(this.setNodes);
+  },
+
+  setPods: function(pods) {
+    this.props.onUpdatePods(pods);
+  },
+
+  setRacks: function(racks) {
+    this.props.onUpdateRacks(racks);
+  },
+
+  setSystems: function(systems) {
+    this.props.onUpdateSystems(systems);
+  },
+
+  setStorage: function(storage) {
+    this.props.onUpdateStorage(storage);
+  },
+
+  setNodes: function(nodes) {
+    this.props.onUpdateNodes(nodes);
   },
 
   render: function() {
@@ -46,40 +96,49 @@ const Home = React.createClass({
           <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
               <ul class="nav nav-sidebar">
-                <li class="active"><a href="#pods" data-toggle="tab">PODS </a></li>
-                <li><a href="#racks" data-toggle="tab">RACKS</a></li>
-                <li><a href="#systems" data-toggle="tab">SYSTEMS</a></li>
-                <li><a href="#composednodes" data-toggle="tab">COMPOSED NODES</a></li>
+                <li class="active"><a href="#pods" data-toggle="tab" onClick={() => this.getPods()}>PODS</a></li>
+                <li><a href="#racks" data-toggle="tab" onClick={() => this.getRacks()}>RACKS</a></li>
+                <li><a href="#systems" data-toggle="tab" onClick={() => this.getSystems()}>SYSTEMS</a></li>
+                <li><a href="#storage" data-toggle="tab" onClick={() => this.getStorage()}>STORAGE</a></li>
+                <li><a href="#composednodes" data-toggle="tab" onClick={() => this.getNodes()}>COMPOSED NODES</a></li>
               </ul>
             </div>
             <div class="col-sm-9 col-md-10 main">
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="pods">
-                  <PodList
+                  <ResourceList
                     onShowDetail={this.props.onShowDetail}
-                    onUpdatePods={this.props.onUpdatePods}
-                    podList={this.props.podList}
+                    resources={this.props.podList}
+                    header="PODS"
                   />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="racks">
-                  <RackList
+                  <ResourceList
                     onShowDetail={this.props.onShowDetail}
-                    onUpdateRacks={this.props.onUpdateRacks}
-                    rackList={this.props.rackList}
+                    resources={this.props.rackList}
+                    header="RACKS"
                   />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="systems">
-                  <SystemList
+                  <ResourceList
                     onShowDetail={this.props.onShowDetail}
-                    onUpdateSystems={this.props.onUpdateSystems}
-                    systemList={this.props.systemList}
+                    resources={this.props.systemList}
+                    header="SYSTEMS"
+                  />
+                </div>
+                <div role="tabpanel" class="tab-pane" id="storage">
+                  <ResourceList
+                    onShowDetail={this.props.onShowDetail}
+                    resources={this.props.storageList}
+                    header="STORAGE"
                   />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="composednodes">
-                  <ComposedNodeList
+                  <NodeList
                     onShowDetail={this.props.onShowDetail}
-                    onUpdateNodes={this.props.onUpdateNodes}
-                    nodeList={this.props.nodeList}
+                    onUpdateNodes={this.getNodes}
+                    nodes={this.props.nodeList}
+                    header="COMPOSED NODES"
                   />
                 </div>
               </div>

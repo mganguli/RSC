@@ -13,7 +13,6 @@ const ComposeDisplay = React.createClass({
 
   componentDidMount() {
     this.getProcessors();
-    setInterval(this.getProcessors, 2000);
   },
 
   compose: function() {
