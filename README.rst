@@ -1,23 +1,23 @@
-=======================
-Openstack RSC Project
-=======================
+=========================
+Openstack Valence Project
+=========================
 
-Rack Scale Controller (RSC) is a service for lifecycle management of pooled bare-metal hardware infrastructure such as Intel(R) Rack Scale architecture which uses Redfish(TM) as one of the management protocols.
+Valence is a service for lifecycle management of pooled bare-metal hardware infrastructure such as Intel(R) Rack Scale architecture which uses Redfish(TM) as one of the management protocols.
     
 :Free software: Apache license
-:Wiki: https://wiki.openstack.org/wiki/Rsc
+:Wiki: https://wiki.openstack.org/wiki/Valence
 :Source: http://git.openstack.org/cgit/openstack/rsc
-:Bugs: http://bugs.launchpad.net/plasma
+:Bugs: http://bugs.launchpad.net/openstack-valence
 
     
 ===========================
 Download and Installation
 ===========================
 
-The following steps capture how to install rsc. All installation steps require super user permissions.
+The following steps capture how to install valence. All installation steps require super user permissions.
 
 ********************
-RSC installation
+Valence installation
 ********************
 
  1. Install software dependencies
@@ -26,37 +26,37 @@ RSC installation
 
  2. Configure RabbitMq Server
 
-     ``$ sudo rabbitmqctl add_user rsd rsd    #user this username/pwd in rsc.conf``
+     ``$ sudo rabbitmqctl add_user rsd rsd    #user this username/pwd in valence.conf``
 
      ``$ sudo rabbitmqctl set_user_tags rsd administrator``
 
      ``$ sudo rabbitmqctl set_permissions rsd ".*" ".*" ".*"``
    
- 3. Clone the RSC code from git repo and change the directory to root RSC folder.
+ 3. Clone the Valence code from git repo and change the directory to root Valence folder.
 
  4. Install all necessary software pre-requisites using the pip requirements file. 
 
     ``$ sudo -E pip install -r requirements.txt``
 
- 5. Execute the 'install_rsc.sh' file the RSC root directory. 
+ 5. Execute the 'install_valence.sh' file the Valence root directory. 
 
-    ``$ ./install_rsc.sh``
+    ``$ ./install_valence.sh``
  
- 6. Check the values in rsc.conf located at /etc/rsc/rsc.conf   
+ 6. Check the values in valence.conf located at /etc/valence/valence.conf   
          
-     ``set the ip/credentials of podm for which this RSC will interact``
+     ``set the ip/credentials of podm for which this Valence will interact``
 
      ``set the rabbitmq user/password to the one given above(Step 2)``
 
- 7. Check the values in /etc/init/rsc-api.conf, /etc/init/rsc-controller.conf 
+ 7. Check the values in /etc/init/valence-api.conf, /etc/init/valence-controller.conf 
 
  8. Start api and controller services
     
-    ``$ service rsc-api start`` 
+    ``$ service valence-api start`` 
 
-    ``$ service rsc-controller start``
+    ``$ service valence-controller start``
 
- 9. Logs are located at /var/logs/rsc/
+ 9. Logs are located at /var/logs/valence/
 
 ****************
 GUI installation
@@ -68,24 +68,24 @@ Please refer to the installation steps in the ui/README file.
 Components
 **********
 
-RSC follows the typical OpenStack project setup. The components are listed below:
+Valence follows the typical OpenStack project setup. The components are listed below:
 
-rsc-api
+valence-api
 -----------
-A pecan based daemon to expose RSC REST APIs. The api service communicates to the controller through AMQP.
+A pecan based daemon to expose Valence REST APIs. The api service communicates to the controller through AMQP.
 
-rsc-controller
+valence-controller
 --------------
 The controller implements all the handlers for Plasma-api. It reads requests from the AMQP queue, process it and send the reponse back to the caller.
 
-rsc-ui
+valence-ui
 --------
-rsc-ui provides a GUI interface to invoke RSC APIs. 
+valence-ui provides a GUI interface to invoke Valence APIs. 
 
 ==========
 Features
 ==========
-Please refer the RSC blueprints for supported and in-the-pipeline features.
+Please refer the Valence blueprints for supported and in-the-pipeline features.
 ``https://blueprints.launchpad.net/plasma``
 
 
