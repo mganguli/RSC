@@ -393,7 +393,12 @@ def nodes_list(count=None, filters={}):
             cpu = {}
             ram = 0
             nw = 0
-            localstorage = node_storage_details(nodesystemurl)
+            localstorage = 0
+
+            if node["Links"]["ComputerSystem"]:
+                nodesystemurl = node["Links"]["ComputerSystem"]["@odata.id"]
+                localstorage = node_storage_details(nodesystemurl)
+
             if "Processors" in node:
                 cpu = { "count" : node["Processors"]["Count"],
                         "model" : node["Processors"]["Model"]}
@@ -414,4 +419,4 @@ def nodes_list(count=None, filters={}):
             if filterPassed:
                lst_nodes.append(node)
                # LOG.info(str(node))
-        return lst_nodes
+    return lst_nodes
